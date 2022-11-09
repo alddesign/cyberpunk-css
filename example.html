@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" lang="en">
+        <title>cyberpunk css</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="example.js"></script>
+
+
+        <link rel="stylesheet" href="cyber-grid.css">
+        <link rel="stylesheet" href="cyberpunk.css">
+    </head>
+
+    <body style="min-width: 560px; overflow:auto;">
+        <div id="header" class="bg-black fg-white razor-after pt-0 pl-10 pb-8">
+            <span class="cyberpunk-font-og f-x2-5">
+                <span class="c">C</span>yber <span class="p">P</span>unk 
+            </span>
+            <span class="fg-yellow pl-6 f-x3-5 pb--2" style="position: relative; top: 10px;">CSS<span class="glitch3">_</span></span>
+        </div>
+
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <!-- Colors -->
+                    <h1 class="cyber-h">Colors</h1>
+                    <p>
+                        Use classes <code>bg-*</code> for background colors and <code>fg-*</code> for text colors.<br>
+                        Most of the following elements are designed to work with these two classes (buttons for example).
+                    </p>
+                    <p>
+                        Predefined colors from the Cyberpunk 2077 color palette, as well as some standard colors:
+                    </p>
+                    <div class="container mt-2">
+                        <div class="row">
+                            <div class="col p-4 bg-yellow"><code>-yellow</code></div>
+                            <div class="col p-4 bg-cyan"><code>-cyan</code></div>
+                            <div class="col p-4 bg-red"><code>-red</code></div>
+                            <div class="col p-4 bg-purple"><code>-purple</code></div>
+                            <div class="col p-4 bg-blue"><code>-blue</code></div>
+                            <div class="col p-4 bg-green"><code>-green</code></div>
+                            <div class="col p-4 bg-white"><code>-white</code></div>
+                            <div class="col p-4 bg-black"><code>-black</code></div>
+                            <div class="col p-4 bg-dark"><code>-dark</code></div>
+                        </div>
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <h1 class="cyber-h">Buttons</h1>
+                    <p>
+                        Example code for buttons:
+                    </p>
+                    <div id="code1" class="code-block"></div>
+                    <p>
+                        You can remove the element with the <code>.glitchtext</code> class to remove the hover effect. Use <code>fg-*</code> <code>bg-*</code> for coloring.
+                    </p>
+                    <button class="cyber-button bg-red fg-white m-2">
+                        .cyber-button
+                        <span class="glitchtext">&dollar;_glitch;</span>
+                        <span class="tag">R25</span>
+                    </button>
+                    <button class="cyber-button-big bg-purple fg-white m-2">
+                        .cyber-button-big
+                        <span class="glitchtext">throw err;</span>
+                        <span class="tag">R25</span>
+                    </button>
+                    <button class="cyber-button-small bg-blue fg-white m-2">
+                        .cyber-button-small
+                    </button>
+
+                    <!-- Tiles -->
+                    <h1 class="cyber-h">Tiles</h1>
+                    <div class="cyber-tile fg-white bg-red">
+                        <img src="img/tile1.jpg">
+                        <label>Cyber-tiles<br>Alongside the orange dust of the eastern warehouses, the edgerunners are ready to strike.</label>
+                    </div>
+                    <div class="cyber-tile-big fg-dark bg-cyan mt-4">
+                        <img src="img/tile2.jpg">
+                        <label>
+                            Use classes <code>.cyber-tile</code> <code>.cyber-tile-big</code> <code>.cyber-tile-small</code> together with <code>.bg-*</code> <code>.fg-*</code> for colors.
+                            <span class="code-block mt-2" id="code0" data-title="//HTML Code:"></span>
+                        </label>
+                    </div>
+
+                    <!-- Source Code -->
+                    <h1 class="cyber-h">SourceCode();</h1>
+                    <p>
+                        Use the <code>&lt;code&gt;</code> tags or class <code>.code</code> to show inline code examples like this one here.
+                    </p>
+                    <p>
+                        Use the following html to show blocks of code:
+                    </p>
+                    <div class="code-block" data-title="//HTML Code:" id="code2"></div>
+
+                    <!-- Fonts -->
+                    <h1 class="cyber-h">Fonts</h1>
+                    <p>
+                        Cyberpunk CSS also provides three fonts that fit this theme.
+                    </p>
+                    <span class="cyber-h"><b>BlenderProBook</b></span>
+                    Is the default font which is used for the whole page.
+                    <div style="font-size: 42px;">BlenderProBook</div> 42px
+                    
+                    <p></p>
+
+                    <span class="cyber-h"><b>Oxanium</b></span>
+                    Is the font used in <code>&lt;code&gt;</code> and  <code>.code-blocks</code>. To use this font, you can apply the <code>.oxanium-font</code> class to desired elements.
+                    <div class="oxanium-font" style="font-size: 42px;">Oxanium</div> 42px                     
+                    
+                    <p></p>
+
+                    <span class="cyber-h"><b>Cyberpunk</b></span>
+                    Is the well known font used in the Cyberpunk 2077 logo.<br>
+                    You should use the <code>.cyberpunk-font</code> class to apply this font to your elements, because it transforms the text for a better look. Use <code>.cyberpunk-font-og</code> for the destinctive yellow/cyan look which comes close to the original logo.<br>
+                    <br>
+                    <i>Hint: </i>
+                    This font doesnt look good with small font sizes. To recreate the logo you have to do an a few tweaks in CSS. Take a look at the very top of this page for an example
+                    <div class="cyberpunk-font" style="font-size: 42px;">Cyberpunk</div> 42px
+
+                    <!-- Headings -->
+                    <h1 class="cyber-h">Headings</h1>
+                    <p>
+                        You can add class <code>.cyber-h</code> to style your headings. 
+                        Can be used with <code>&lt;h*&gt;</code> but also with other elements like <code>&lt;span&gt;</code> or <code>&lt;div&gt;</code>. All elements will be displayed as a block level element.
+                        
+                    </p>
+
+                    <h1 class="cyber-h">Heading h1</h1>
+                    <h2 class="cyber-h">Heading h2</h2>
+                    <h3 class="cyber-h">Heading h3</h3>
+                    <h4 class="cyber-h">Heading h4</h4>
+                    <h5 class="cyber-h">Heading h5</h5>
+                    <h6 class="cyber-h">Heading h6</h6>
+                    <span class="cyber-h">A normal <code>&lt;span&gt;</code></span>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        
+        <div id="footer-spacer" class="mb-20"></div>
+
+        <div id="footer" class="bg-black fg-white razor-before p-2 fixed-bottom">
+        </div>
+    </body>
+</html>
