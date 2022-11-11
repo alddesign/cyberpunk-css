@@ -21,16 +21,15 @@ See example.html for usage.
     z-index: 999 !important;
 }
 
-.fixed-top
-{
-    top: 0 !important;
-}
+.fixed-top{top: 0 !important;}
+.fixed-bottom{bottom: 0 !important;}
 
-.fixed-bottom
-{
-    bottom: 0 !important;
-}
+.block{display: block !important;}
+.inline{ display: inline !important;}
+.inline-block{ display: inline-block !important;}
 
+.vt-bot{vertical-align: bottom;}
+.vt-top{vertical-align: top;}
 
 .container
 {

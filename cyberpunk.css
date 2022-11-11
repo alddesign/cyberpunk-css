@@ -477,13 +477,39 @@ body
 
 /*#region glitches*/
 
-/*description: good for images. nevous little shake first, then distorting/breaking effect by rotating and inverting colors.*/
-.glitch1
+/*description: good for images. Effect of a dying flickering screen. Sometimes bright, sometimes dark.*/
+.glitch-0
 {
-    animation: glitch1 5s linear infinite;
+    animation: glitch-0 5s linear infinite;
 }
 
-@keyframes glitch1
+
+@keyframes glitch-0
+{
+    0% {filter: blur(0) brightness(100%) contrast(100%);}
+    2% {filter: blur(.05rem) brightness(120%) contrast(120%);}
+    4% {filter: blur(.10rem) brightness(150%) contrast(150%);}
+    6% {filter: blur(.20rem) brightness(170%) contrast(170%);}
+    8% {filter: blur(0) brightness(100%) contrast(100%);}
+    10% {filter: blur(0) brightness(100%) contrast(100%);}
+    60% {filter: blur(0) brightness(100%) contrast(100%);}
+    62% {filter: blur(.05rem) brightness(60%) contrast(100%);}
+    64% {filter: blur(.10rem) brightness(40%) contrast(100%);}
+    66% {filter: blur(0) brightness(100%) contrast(100%);}
+    68% {filter: blur(.05rem) brightness(60%) contrast(100%);}
+    70% {filter: blur(.10rem) brightness(40%) contrast(100%);}
+    72% {filter: blur(0) brightness(100%) contrast(100%);}
+    100% {filter: blur(0) brightness(100%) contrast(100%);}
+}
+
+
+/*description: good for images. nevous little shake first, then distorting/breaking effect by rotating and inverting colors.*/
+.glitch-1
+{
+    animation: glitch-1 5s linear infinite;
+}
+
+@keyframes glitch-1
 {
     0% {transform: translate(0,0) skew(0deg); filter: invert(0);}
     1% {transform: translate(0,0) skew(-3deg); filter: invert(0);}
@@ -498,29 +524,30 @@ body
 }
 
 /*description: good for text and containers with text. squeeze effect by removing top an bottom of the element, shake left to right, apply glitchy text-shadow, back to normal*/
-.glitch2
+.glitch-2
 {
-    animation: glitch2 4s linear infinite;
+    animation: glitch-2 4s linear infinite;
 }
 
-@keyframes glitch2 
+@keyframes glitch-2 
 {
-    0% {clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); transform: translateX(0); text-shadow: none;}
+    0% {clip-path: var(--og-clip-path); transform: translateX(0); text-shadow: none;}
     2% {clip-path: polygon(0 40%, 0 100%, 100% 100%, 100% 40%); transform: translateX(0); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
-    4% {clip-path: polygon(0 40%, 0 100%, 100% 100%, 100% 40%); transform: translateX(-10%); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
-    6% {clip-path: polygon(0 40%, 0 100%, 100% 100%, 100% 40%); transform: translateX(10%); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
+    4% {clip-path: polygon(0 40%, 0 100%, 100% 100%, 100% 40%); transform: translateX(-1rem); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
+    6% {clip-path: polygon(0 40%, 0 100%, 100% 100%, 100% 40%); transform: translateX(1rem); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
     8% {clip-path: polygon(0 40%, 0 100%, 100% 100%, 100% 40%); transform: translateX(0); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
     12% {clip-path: polygon(0 10%, 0 40%, 100% 40%, 100% 10%); transform: translateX(0); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
-    14% {clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); transform: translateX(0); text-shadow: none;}
+    14% {clip-path: var(--og-clip-path); transform: translateX(0); text-shadow: none;}
+    100% {clip-path: var(--og-clip-path); transform: translateX(0); text-shadow: none;}
 }
 
 /*description: good for text, especially underlines. Steady blinking*/
-.glitch3
+.glitch-3
 {
-    animation: glitch3 1s linear infinite;
+    animation: glitch-3 1s linear infinite;
 }
 
-@keyframes glitch3 
+@keyframes glitch-3 
 {
     0% {visibility: visible;}
     49% {visibility: visible;}
@@ -529,12 +556,12 @@ body
 }
 
 /*description: good for text, especially underlines. Blinking with different pauses in between.*/
-.glitch4
+.glitch-4
 {
-    animation: glitch4 5s linear infinite;
+    animation: glitch-4 5s linear infinite;
 }
 
-@keyframes glitch4 
+@keyframes glitch-4 
 {
     0% {visibility: visible;}
     1% {visibility: hidden;}
@@ -576,13 +603,15 @@ body
 .cyber-tile-big
 {
     --tile-width: 360px;
-    --tile-padding: 3px;
+    --tile-padding: 4px;
     --tile-edges: 20px;
-    --label-margins: calc(var(--tile-edges) - 3px);
+    --label-margins: calc(var(--tile-edges) - var(--tile-padding));
+    --og-clip-path: polygon(0 0, 0 calc(100% - var(--tile-edges)), var(--tile-edges) 100%, 100% 100%, 100% var(--tile-edges), calc(100% - var(--tile-edges)) 0);
     width: var(--tile-width);
     min-height: 60px;
-    clip-path: polygon(0 0, 0 calc(100% - var(--tile-edges)), var(--tile-edges) 100%, 100% 100%, 100% var(--tile-edges), calc(100% - var(--tile-edges)) 0);
+    clip-path: var(--og-clip-path);
     padding: var(--tile-padding);
+    padding-bottom: var(--tile-edges);
 }
 
 .cyber-tile img,
@@ -599,7 +628,14 @@ body
 .cyber-tile-big label
 {
     display: block;
-    margin: 0 var(--label-margins) var(--label-margins) var(--label-margins);
+    margin: var(--label-margins) var(--label-margins) 0 var(--label-margins);
+}
+
+.cyber-tile img ~ label ,
+.cyber-tile-small img ~ label,
+.cyber-tile-big img ~ label
+{
+    margin-top: 0;
 }
 
 /*Overriding the values*/
@@ -618,7 +654,7 @@ body
 
 /*#endregion*/
 
-/*region code*/
+/*#region code*/
 .code,
 code,
 .code-block
@@ -627,7 +663,7 @@ code,
     color: var(--cyan);
     padding: .3rem .4rem .2rem .4rem;
     font-family: Oxanium !important;
-    font-size: 14px;
+    font-size: .75rem;
 }
 
 .code-block
@@ -645,16 +681,11 @@ code,
 }
 /*#endregion*/
 
-h1.cyber-h {font-size: 3rem;}
-h2.cyber-h {font-size: 2.5rem;}
-h3.cyber-h {font-size: 2rem;}
-h4.cyber-h {font-size: 1.5rem;}
-h5.cyber-h {font-size: 1rem;}
-h6.cyber-h {font-size: 1rem; font-weight: 400;}
-
+/*#region headings*/
 .cyber-h
 {
     display: block;
+    width: 60%;
 }
 
 .cyber-h::after
@@ -666,3 +697,47 @@ h6.cyber-h {font-size: 1rem; font-weight: 400;}
     background-color: var(--black);
     clip-path: polygon(0 0, 0 100%, 10% 100%, calc(10% + 4px) 2px, 100% 2px, 100% 0);
 }
+
+h1.cyber-h
+{
+    font-size: 3.0rem;
+    margin: 2.0rem 0;
+    width: 100%;
+}
+
+h2.cyber-h
+{
+    font-size: 2.5rem;
+    margin: 1.6rem 0;
+    width: 90%;
+}
+
+h3.cyber-h
+{
+    font-size: 2rem;
+    margin: 1.4rem 0;
+    width: 80%;
+}
+
+h4.cyber-h
+{
+    font-size: 1.5rem;
+    margin: 1.2rem 0;
+    width: 70%;
+}
+
+h5.cyber-h
+{
+    font-size: 1.0rem;
+    margin: 1.0rem 0;
+    width: 60%;
+}
+
+h6.cyber-h
+{
+    font-size: 1.0rem;
+    margin: 1.0rem 0;
+    font-weight: 400;
+    width: 60%;
+}
+/*#endregion*/

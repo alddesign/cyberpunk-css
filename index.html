@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" lang="en">
         <title>cyberpunk css</title>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-        <script src="example.js"></script>
+        <script src="helper.js"></script>
 
 
         <link rel="stylesheet" href="cyber-grid.css">
@@ -17,7 +17,7 @@
             <span class="cyberpunk-font-og f-x2-5">
                 <span class="c">C</span>yber <span class="p">P</span>unk 
             </span>
-            <span class="fg-yellow pl-6 f-x3-5 pb--2" style="position: relative; top: 10px;">CSS<span class="glitch3">_</span></span>
+            <span class="fg-yellow pl-6 f-x3-5 pb--2" style="position: relative; top: 10px;">CSS<span class="glitch-3">_</span></span>
         </div>
 
         <div id="main" class="container">
@@ -57,33 +57,40 @@
                     <p>
                         You can remove the element with the <code>.glitchtext</code> class to remove the hover effect. Use <code>fg-*</code> <code>bg-*</code> for coloring.
                     </p>
-                    <button class="cyber-button bg-red fg-white m-2">
-                        .cyber-button
-                        <span class="glitchtext">&dollar;_glitch;</span>
-                        <span class="tag">R25</span>
-                    </button>
-                    <button class="cyber-button-big bg-purple fg-white m-2">
+                    <button class="cyber-button-big bg-purple fg-white m-2 vt-bot">
                         .cyber-button-big
                         <span class="glitchtext">throw err;</span>
                         <span class="tag">R25</span>
                     </button>
-                    <button class="cyber-button-small bg-blue fg-white m-2">
+                    <button class="cyber-button bg-red fg-white m-2 vt-bot">
+                        .cyber-button
+                        <span class="glitchtext">&dollar;_glitch;</span>
+                        <span class="tag">R25</span>
+                    </button>
+                    <button class="cyber-button-small bg-blue fg-white m-2 vt-bot">
                         .cyber-button-small
                     </button>
 
                     <!-- Tiles -->
                     <h1 class="cyber-h">Tiles</h1>
-                    <div class="cyber-tile fg-white bg-red">
-                        <img src="img/tile1.jpg">
-                        <label>Cyber-tiles<br>Alongside the orange dust of the eastern warehouses, the edgerunners are ready to strike.</label>
-                    </div>
-                    <div class="cyber-tile-big fg-dark bg-cyan mt-4">
-                        <img src="img/tile2.jpg">
-                        <label>
-                            Use classes <code>.cyber-tile</code> <code>.cyber-tile-big</code> <code>.cyber-tile-small</code> together with <code>.bg-*</code> <code>.fg-*</code> for colors.
-                            <span class="code-block mt-2" id="code0" data-title="//HTML Code:"></span>
-                        </label>
-                    </div>
+                        <p>
+                            General purpose containers for text and/or images.
+                        </p>
+                        <div class="cyber-tile-big fg-white bg-purple mr-4 inline-block vt-bot">
+                            <img src="img/tile2.jpg">
+                            <label>
+                                Use classes <code>.cyber-tile</code> <code>.cyber-tile-big</code> <code>.cyber-tile-small</code> together with <code>.bg-*</code> <code>.fg-*</code> for colors.
+                                <span class="code-block mt-2" id="code0" data-title="//HTML Code:"></span>
+                            </label>
+                        </div>
+
+                        <div class="cyber-tile fg-white bg-red mt-4 mr-4 inline-block vt-bot">
+                            <label><code>.cyber-tile</code><br>Alongside the orange dust of the eastern warehouses, the edgerunners are ready to strike.</label>
+                        </div>
+
+                        <div class="cyber-tile-small fg-dark bg-cyan mt-4 inline-block vt-bot">
+                            <img src="img/tile3.jpg">
+                        </div>
 
                     <!-- Source Code -->
                     <h1 class="cyber-h">SourceCode();</h1>
@@ -97,22 +104,18 @@
 
                     <!-- Fonts -->
                     <h1 class="cyber-h">Fonts</h1>
-                    <p>
-                        Cyberpunk CSS also provides three fonts that fit this theme.
-                    </p>
-                    <span class="cyber-h"><b>BlenderProBook</b></span>
+
+                    Cyberpunk CSS also provides three fonts that fit this theme.
+
+                    <h3 class="cyber-h">BlenderProBook</h3>
                     Is the default font which is used for the whole page.
                     <div style="font-size: 42px;">BlenderProBook</div> 42px
                     
-                    <p></p>
-
-                    <span class="cyber-h"><b>Oxanium</b></span>
+                    <h3 class="cyber-h">Oxanium</h3>
                     Is the font used in <code>&lt;code&gt;</code> and  <code>.code-blocks</code>. To use this font, you can apply the <code>.oxanium-font</code> class to desired elements.
                     <div class="oxanium-font" style="font-size: 42px;">Oxanium</div> 42px                     
                     
-                    <p></p>
-
-                    <span class="cyber-h"><b>Cyberpunk</b></span>
+                    <h3 class="cyber-h">Cyberpunk</h3>
                     Is the well known font used in the Cyberpunk 2077 logo.<br>
                     You should use the <code>.cyberpunk-font</code> class to apply this font to your elements, because it transforms the text for a better look. Use <code>.cyberpunk-font-og</code> for the destinctive yellow/cyan look which comes close to the original logo.<br>
                     <br>
@@ -122,12 +125,10 @@
 
                     <!-- Headings -->
                     <h1 class="cyber-h">Headings</h1>
-                    <p>
-                        You can add class <code>.cyber-h</code> to style your headings. 
-                        Can be used with <code>&lt;h*&gt;</code> but also with other elements like <code>&lt;span&gt;</code> or <code>&lt;div&gt;</code>. All elements will be displayed as a block level element.
-                        
-                    </p>
 
+                    You can add class <code>.cyber-h</code> to style your headings. 
+                    Can be used with <code>&lt;h*&gt;</code> but also with other elements like <code>&lt;span&gt;</code> or <code>&lt;div&gt;</code>. All elements will be displayed as a block level element.
+                    
                     <h1 class="cyber-h">Heading h1</h1>
                     <h2 class="cyber-h">Heading h2</h2>
                     <h3 class="cyber-h">Heading h3</h3>
@@ -135,6 +136,47 @@
                     <h5 class="cyber-h">Heading h5</h5>
                     <h6 class="cyber-h">Heading h6</h6>
                     <span class="cyber-h">A normal <code>&lt;span&gt;</code></span>
+
+                    <!-- Glitching Effects -->
+                    <h1 class="cyber-h">Glitching effects</h1>
+
+                    Cyberpunk CSS provides a set of glitching effects which fit the theme. Use the classes <code>.glitch-0</code> to <code>.glitch-4</code><br>
+                    They create an impression of instable tech an small errors/glitches in the matrix. Not all effects work well with every element. Some are good for texts, other are good for images or containers.  
+
+                    <h3 class="cyber-h">.glitch-0</h3>
+                    <p>
+                        Good for images. Effect of a flickering screen. Sometimes bright, sometimes dark.
+                    </p>
+                    <img src="img/tile4.jpg" class="glitch-0"> 
+
+                    <h3 class="cyber-h">.glitch-1</h3>
+                    <p>
+                        Good for images. Little shakes first, then distorting/breaking effect by rotating and inverting colors.
+                    </p>
+                    <img src="img/tile3.jpg" class="glitch-1">
+
+                    <h3 class="cyber-h">.glitch-2</h3>
+                    <p>
+                        Good for containers with text. Squeeze effect by removing top an bottom of the element, shake left to right, apply glitchy text-shadow.<br>
+                        If your element uses uses css <code>clip-path</code>, this might not look good. You can try to set the variable <code>--og-clip-path</code> to the clip path of your element, so this animation can revert back to the original state.
+                    </p>
+                    <div class="cyber-tile bg-green fg-white glitch-2">
+                        <label>
+                            Somehow this will get torn apart.<br>
+                            Take care, never ride the streets of night city alone.
+                        </label>
+                    </div>
+
+                    <h3 class="cyber-h"><span class="glitch-3">.</span>glitch<span class="glitch-3">-</span>3</h3>
+                    <p>
+                        Good for text. Especially small parts like dots or underlines. Steady blinking.
+                    </p>
+
+                    <h3 class="cyber-h glitch-4">.glitch-4</h3>
+                    <p>
+                        Good for text. Blinking with different pauses in between.
+                    </p>
+                    
                 </div>
                 <div class="col-1"></div>
             </div>
