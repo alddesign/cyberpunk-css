@@ -1,2 +1,2 @@
 # cyberpunk-css
-CSS framework which provides Cyberpunk 2077 elements to your webpage.
+CSS library which provides Cyberpunk 2077 themed elements to your webpage.

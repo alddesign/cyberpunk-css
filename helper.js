@@ -2,9 +2,8 @@
 /**
  * Not required by cyberpunk css.
  * 
- * Just a 
+ * Just for the purpose of this demo page.
  */
-
 
 function encode(text)
 {
@@ -33,6 +32,10 @@ codes[2] =
 `<div class="code-block" data-title="C# Code:">*
     Example of some C# Code...*
 </div>`;
+
+codes[3] = 
+`<link rel="stylesheet" href="cyberpunk.css">`;
+
 
     $(codes).each(function(index)
     {
