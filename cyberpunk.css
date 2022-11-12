@@ -117,8 +117,8 @@ body
 .fg-yellow
 { color: var(--yellow); }
 .bg-yellow,
-.bg-yellow.razor-before::before,
-.bg-yellow.razor-after::after 
+.bg-yellow.cyber-razor-top::before,
+.bg-yellow.cyber-razor-bottom::after 
 { background-color: var(--yellow); }
 .bg-yellow.cyber-button,
 .bg-yellow.cyber-button-small,
@@ -128,8 +128,8 @@ body
 .fg-cyan
 { color: var(--cyan); }
 .bg-cyan,
-.bg-cyan.razor-before::before,
-.bg-cyan.razor-after::after
+.bg-cyan.cyber-razor-top::before,
+.bg-cyan.cyber-razor-bottom::after
 { background-color: var(--cyan); }
 .bg-yellow.cyber-button,
 .bg-yellow.cyber-button-small,
@@ -139,8 +139,8 @@ body
 .fg-red
 { color: var(--red); }
 .bg-red,
-.bg-red.razor-before::before,
-.bg-red.razor-after::after,
+.bg-red.cyber-razor-top::before,
+.bg-red.cyber-razor-bottom::after,
 .fg-red.cyber-h::after
 { background-color: var(--red); }
 .bg-red.cyber-button,
@@ -150,8 +150,8 @@ body
 
 .fg-blue{ color: var(--blue); }
 .bg-blue{ background-color: var(--blue); }
-.bg-blue.razor-before::before{ background-color: var(--blue); }
-.bg-blue.razor-after::after{ background-color: var(--blue); }
+.bg-blue.cyber-razor-top::before{ background-color: var(--blue); }
+.bg-blue.cyber-razor-bottom::after{ background-color: var(--blue); }
 .bg-blue.cyber-button,
 .bg-blue.cyber-button-small,
 .bg-blue.cyber-button-big
@@ -160,8 +160,8 @@ body
 .fg-green
 { color: var(--green); }
 .bg-green,
-.bg-green.razor-before::before,
-.bg-green.razor-after::after
+.bg-green.cyber-razor-top::before,
+.bg-green.cyber-razor-bottom::after
 { background-color: var(--green); }
 .bg-green.cyber-button,
 .bg-green.cyber-button-small,
@@ -171,8 +171,8 @@ body
 .fg-purple
 { color: var(--purple); }
 .bg-purple,
-.bg-purple.razor-before::before,
-.bg-purple.razor-after::after
+.bg-purple.cyber-razor-top::before,
+.bg-purple.cyber-razor-bottom::after
 { background-color: var(--purple); }
 .bg-purple.cyber-button,
 .bg-purple.cyber-button-small,
@@ -182,8 +182,8 @@ body
 .fg-black
 { color: var(--black); }
 .bg-black,
-.bg-black.razor-before::before,
-.bg-black.razor-after::after
+.bg-black.cyber-razor-top::before,
+.bg-black.cyber-razor-bottom::after
 { background-color: var(--black); }
 .bg-black.cyber-button,
 .bg-black.cyber-button-small,
@@ -193,8 +193,8 @@ body
 .fg-white
 { color: var(--white); }
 .bg-white,
-.bg-white.razor-before::before,
-.bg-white.razor-after::after
+.bg-white.cyber-razor-top::before,
+.bg-white.cyber-razor-bottom::after
 { background-color: var(--white); }
 .bg-white.cyber-button,
 .bg-white.cyber-button-small,
@@ -204,8 +204,8 @@ body
 .fg-dark
 { color: var(--dark); }
 .bg-dark,
-.bg-dark.razor-before::before,
-.bg-dark.razor-after::after
+.bg-dark.cyber-razor-top::before,
+.bg-dark.cyber-razor-bottom::after
 { background-color: var(--dark); }
 .bg-dark.cyber-button,
 .bg-dark.cyber-button-small,
@@ -214,19 +214,19 @@ body
 /*#endregion*/
 
 /*#region razor*/
-.razor-before
+.cyber-razor-top
 {
     margin-top: 30px;
     position: relative;
 }
 
-.razor-after
+.cyber-razor-bottom
 {
     margin-bottom: 30px;
     position: relative;
 }
 
-.razor-before:before
+.cyber-razor-top:before
 {
     content: " ";
     mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920px" height="40px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M1827.156,15.021 L1827.129,14.994 L1833.785,14.994 L1833.759,15.021 L1827.156,15.021 ZM1824.965,24.036 L1835.969,24.036 L1830.461,18.558 L1833.759,15.021 L1920.000,15.021 L1920.000,39.075 L0.001,39.075 L0.001,15.013 L271.884,15.013 L279.537,6.930 L292.458,6.930 L308.426,24.036 L308.449,24.013 L308.467,24.036 L317.638,15.021 L463.241,15.021 L466.539,18.558 L461.031,24.036 L472.035,24.036 L466.539,18.558 L469.844,15.021 L551.557,15.021 L556.251,10.578 L565.497,1.358 L571.663,7.066 L602.910,7.055 L607.919,7.055 L620.578,19.983 L654.209,19.983 L661.448,12.957 L735.709,12.995 L741.480,18.554 L750.129,9.930 L753.020,12.995 L918.181,12.957 L930.942,0.066 L954.993,24.036 L955.000,24.024 L955.012,24.036 L964.064,15.013 L967.906,15.013 L970.005,17.106 L966.670,20.419 L973.326,20.419 L970.005,17.106 L972.067,15.055 L1050.000,15.023 L1050.000,15.013 L1064.030,15.017 L1072.000,15.013 L1072.000,15.019 L1225.933,15.055 L1227.994,17.106 L1224.674,20.419 L1231.331,20.419 L1227.994,17.106 L1230.094,15.013 L1233.936,15.013 L1242.989,24.036 L1243.000,24.024 L1243.007,24.036 L1267.058,0.066 L1279.819,12.957 L1368.980,12.995 L1371.871,9.930 L1380.520,18.554 L1386.290,13.057 L1635.552,13.019 L1642.790,19.983 L1676.422,19.983 L1689.080,6.992 L1725.337,7.003 L1731.502,1.358 L1740.749,10.578 L1745.443,15.021 L1827.156,15.021 L1830.461,18.558 L1824.965,24.036 ZM341.624,18.857 L339.889,18.857 L339.889,24.036 L341.624,24.036 L341.624,18.857 ZM344.248,18.857 L342.518,18.857 L342.518,24.036 L344.248,24.036 L344.248,18.857 ZM356.370,18.857 L354.640,18.857 L354.640,24.036 L356.370,24.036 L356.370,18.857 ZM377.168,18.857 L371.973,18.857 L371.973,24.036 L377.168,24.036 L377.168,18.857 ZM584.675,12.348 L582.941,12.348 L582.941,14.073 L584.675,14.073 L584.675,12.348 ZM591.316,12.348 L589.582,12.348 L589.582,17.526 L591.316,17.526 L591.316,12.348 ZM604.751,12.348 L603.017,12.348 L603.017,14.073 L604.751,14.073 L604.751,12.348 ZM604.751,15.802 L603.017,15.802 L603.017,17.526 L604.751,17.526 L604.751,15.802 ZM1693.983,12.348 L1692.249,12.348 L1692.249,14.073 L1693.983,14.073 L1693.983,12.348 ZM1693.983,15.802 L1692.249,15.802 L1692.249,17.526 L1693.983,17.526 L1693.983,15.802 ZM1707.418,12.348 L1705.683,12.348 L1705.683,17.526 L1707.418,17.526 L1707.418,12.348 ZM1714.059,12.348 L1712.324,12.348 L1712.324,14.073 L1714.059,14.073 L1714.059,12.348 ZM463.214,14.994 L469.871,14.994 L469.844,15.021 L463.241,15.021 L463.214,14.994 ZM754.222,5.976 L750.129,9.930 L746.025,5.976 L754.222,5.976 ZM1375.975,5.976 L1371.871,9.930 L1367.778,5.976 L1375.975,5.976 Z"/></svg>');
@@ -240,7 +240,7 @@ body
     z-index: 1;
 }
 
-.razor-after:after
+.cyber-razor-bottom:after
 {
     content: " ";
     mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920px" height="39px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M1877.759,23.791 L1874.461,20.504 L1879.969,15.027 L1868.965,15.027 L1874.461,20.504 L1871.156,23.791 L1789.442,23.791 L1784.749,28.484 L1775.502,37.704 L1769.337,31.559 L1738.089,31.695 L1733.080,31.695 L1720.422,19.079 L1686.790,19.079 L1679.552,26.293 L1386.290,26.255 L1380.520,20.508 L1371.871,29.132 L1368.980,26.255 L1203.819,26.293 L1191.058,38.996 L1167.007,15.027 L1167.000,15.038 L1166.989,15.027 L1157.936,24.049 L1154.094,24.049 L1151.994,21.956 L1155.330,18.643 L1148.674,18.643 L1151.994,21.956 L1149.933,24.007 L1072.000,24.040 L1072.000,24.049 L1061.000,24.044 L1050.000,24.049 L1050.000,24.040 L972.067,24.007 L970.005,21.956 L973.326,18.643 L966.670,18.643 L970.005,21.956 L967.906,24.049 L964.064,24.049 L955.012,15.027 L955.000,15.038 L954.993,15.027 L930.942,38.996 L918.181,26.293 L818.020,26.255 L815.129,29.132 L806.480,20.508 L800.710,26.255 L661.448,26.293 L654.209,19.079 L620.578,19.079 L607.919,31.695 L602.910,31.695 L571.663,31.559 L565.497,37.704 L556.251,28.484 L551.557,23.791 L469.844,23.791 L466.539,20.504 L472.035,15.027 L461.031,15.027 L466.539,20.504 L463.241,23.791 L204.638,23.791 L195.467,15.027 L195.449,15.049 L195.426,15.027 L179.458,31.695 L166.537,31.695 L158.884,24.049 L0.001,24.049 L0.001,-0.012 L1919.998,-0.012 L1919.998,24.049 L1877.759,23.791 ZM228.624,15.027 L226.889,15.027 L226.889,20.205 L228.624,20.205 L228.624,15.027 ZM231.248,15.027 L229.518,15.027 L229.518,20.205 L231.248,20.205 L231.248,15.027 ZM243.370,15.027 L241.640,15.027 L241.640,20.205 L243.370,20.205 L243.370,15.027 ZM264.168,15.027 L258.973,15.027 L258.973,20.205 L264.168,20.205 L264.168,15.027 ZM584.675,24.989 L582.941,24.989 L582.941,26.714 L584.675,26.714 L584.675,24.989 ZM591.316,21.536 L589.582,21.536 L589.582,26.714 L591.316,26.714 L591.316,21.536 ZM604.751,21.536 L603.017,21.536 L603.017,23.260 L604.751,23.260 L604.751,21.536 ZM604.751,24.989 L603.017,24.989 L603.017,26.714 L604.751,26.714 L604.751,24.989 ZM1737.983,21.536 L1736.249,21.536 L1736.249,23.260 L1737.983,23.260 L1737.983,21.536 ZM1737.983,24.989 L1736.249,24.989 L1736.249,26.714 L1737.983,26.714 L1737.983,24.989 ZM1751.418,21.536 L1749.683,21.536 L1749.683,26.714 L1751.418,26.714 L1751.418,21.536 ZM1758.059,24.989 L1756.324,24.989 L1756.324,26.714 L1758.059,26.714 L1758.059,24.989 ZM1877.785,23.818 L1871.129,23.818 L1871.156,23.791 L1877.759,23.791 L1877.785,23.818 ZM1367.778,33.211 L1371.871,29.132 L1375.975,33.211 L1367.778,33.211 ZM469.871,23.818 L463.214,23.818 L463.241,23.791 L469.844,23.791 L469.871,23.818 Z"/></svg>');
@@ -478,13 +478,13 @@ body
 /*#region glitches*/
 
 /*description: good for images. Effect of a dying flickering screen. Sometimes bright, sometimes dark.*/
-.glitch-0
+.cyber-glitch-0
 {
-    animation: glitch-0 5s linear infinite;
+    animation: cyber-glitch-0 5s linear infinite;
 }
 
 
-@keyframes glitch-0
+@keyframes cyber-glitch-0
 {
     0% {filter: blur(0) brightness(100%) contrast(100%);}
     2% {filter: blur(.05rem) brightness(120%) contrast(120%);}
@@ -504,12 +504,12 @@ body
 
 
 /*description: good for images. nevous little shake first, then distorting/breaking effect by rotating and inverting colors.*/
-.glitch-1
+.cyber-glitch-1
 {
-    animation: glitch-1 5s linear infinite;
+    animation: cyber-glitch-1 5s linear infinite;
 }
 
-@keyframes glitch-1
+@keyframes cyber-glitch-1
 {
     0% {transform: translate(0,0) skew(0deg); filter: invert(0);}
     1% {transform: translate(0,0) skew(-3deg); filter: invert(0);}
@@ -524,12 +524,12 @@ body
 }
 
 /*description: good for text and containers with text. squeeze effect by removing top an bottom of the element, shake left to right, apply glitchy text-shadow, back to normal*/
-.glitch-2
+.cyber-glitch-2
 {
-    animation: glitch-2 4s linear infinite;
+    animation: cyber-glitch-2 4s linear infinite;
 }
 
-@keyframes glitch-2 
+@keyframes cyber-glitch-2 
 {
     0% {clip-path: var(--og-clip-path); transform: translateX(0); text-shadow: none;}
     2% {clip-path: polygon(0 40%, 0 100%, 100% 100%, 100% 40%); transform: translateX(0); text-shadow: var(--cyan) 1px 1px, var(--yellow) -1px -1px;}
@@ -542,12 +542,12 @@ body
 }
 
 /*description: good for text, especially underlines. Steady blinking*/
-.glitch-3
+.cyber-glitch-3
 {
-    animation: glitch-3 1s linear infinite;
+    animation: cyber-glitch-3 1s linear infinite;
 }
 
-@keyframes glitch-3 
+@keyframes cyber-glitch-3 
 {
     0% {visibility: visible;}
     49% {visibility: visible;}
@@ -556,12 +556,12 @@ body
 }
 
 /*description: good for text, especially underlines. Blinking with different pauses in between.*/
-.glitch-4
+.cyber-glitch-4
 {
-    animation: glitch-4 5s linear infinite;
+    animation: cyber-glitch-4 5s linear infinite;
 }
 
-@keyframes glitch-4 
+@keyframes cyber-glitch-4 
 {
     0% {visibility: visible;}
     1% {visibility: hidden;}
@@ -741,3 +741,35 @@ h6.cyber-h
     width: 60%;
 }
 /*#endregion*/
+
+.cyber-banner
+{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(90deg, #c9006d, #eb3f5d, #f5a12b, #fbe00b, #dced20, #6cf67b, #43f99c, #00ffd2 450px);
+    background-repeat: no-repeat;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0);
+}
+
+/*
+Note: original file: speed.svg
+If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svgomg/ (import and download)
+*/
+.cyber-banner::before
+{
+    content: " ";
+    display: block;
+    width: 405px;
+    height: inherit;
+    z-index: 2;
+    float: left;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="405" height="50"><path d="M0 0v50h20L45 0zM47 0 22 50h28L75 0zM79 0 54 50h26l25-50zM111 0 86 50h24l25-50zM143 0l-25 50h22l25-50zM175 0l-25 50h20l25-50zM207 0l-25 50h18l25-50zM239 0l-25 50h16l25-50zM271 0l-25 50h14l25-50zM303 0l-25 50h12l25-50zM335 0l-25 50h10l25-50zM367 0l-25 50h8l25-50zM399 0l-25 50h6l25-50z"/></svg>');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

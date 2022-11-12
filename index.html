@@ -12,18 +12,18 @@
     </head>
 
     <body style="min-width: 560px; overflow:auto;">
-        <div id="header" class="bg-black fg-white razor-after pt-0 pl-10 pb-8">
+        <div id="header" class="bg-black fg-white cyber-razor-bottom pt-0 pl-10 pb-8">
             <span class="cyberpunk-font-og f-x2-5">
                 <span class="c">C</span>yber <span class="p">P</span>unk 
             </span>
-            <span class="fg-yellow pl-6 f-x3-5 pb--2" style="position: relative; top: 10px;">CSS<span class="glitch-3">_</span></span>
+            <span class="fg-yellow pl-6 f-x3-5 pb--2" style="position: relative; top: 10px;">CSS<span class="cyber-glitch-3">_</span></span>
         </div>
 
         <div id="main" class="container">
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <!-- About -->
+                    <!-- #region About -->
                     <h1 class="cyber-h">About</h1>
                     Cyberpunk CSS is a CSS library, which provides Cyberpunk 2077 themed elements for your webpage.<br>
                     It is not a complete framework like bootstrap or metro ui. Therefore it doesnt include structural elements, grid systems, page responsiveness, and so on.<br>
@@ -37,8 +37,9 @@
                         This page is an example of what can be achived with this library. Take a look at the source code to check out the details.<br>
                         <code>cyber-grid.css</code> is not required. It is only used for the basic structural layout of this demo page. 
                     </p>
+                    <!-- #endregion -->
 
-                    <!-- Colors -->
+                    <!-- #region Colors -->
                     <h1 class="cyber-h">Colors</h1>
                     <p>
                         Use classes <code>bg-*</code> for background colors and <code>fg-*</code> for text colors.<br>
@@ -60,9 +61,9 @@
                             <div class="col p-4 bg-dark"><code>-dark</code></div>
                         </div>
                     </div>
+                    <!-- #endregion -->
 
-
-                    <!-- Buttons -->
+                    <!-- #region Buttons -->
                     <h1 class="cyber-h">Buttons</h1>
                     <p>
                         Example code for buttons:
@@ -84,8 +85,9 @@
                     <button class="cyber-button-small bg-blue fg-white m-2 vt-bot">
                         .cyber-button-small
                     </button>
+                    <!-- #endregion -->
 
-                    <!-- Tiles -->
+                    <!-- #region Tiles -->
                     <h1 class="cyber-h">Tiles</h1>
                         <p>
                             General purpose containers for text and/or images.
@@ -105,8 +107,9 @@
                         <div class="cyber-tile-small fg-dark bg-cyan mt-4 inline-block vt-bot">
                             <img src="img/tile3.jpg">
                         </div>
+                    <!-- #endregion -->
 
-                    <!-- Source Code -->
+                    <!-- #region Source Code -->
                     <h1 class="cyber-h">SourceCode();</h1>
                     <p>
                         Use the <code>&lt;code&gt;</code> tags or class <code>.code</code> to show inline code examples like this one here.
@@ -115,8 +118,9 @@
                         Use the following html to show blocks of code:
                     </p>
                     <div class="code-block" data-title="HTML:" id="code2"></div>
+                    <!-- #endregion -->
 
-                    <!-- Fonts -->
+                    <!-- #region Fonts -->
                     <h1 class="cyber-h">Fonts</h1>
 
                     Cyberpunk CSS also provides three fonts that fit this theme.
@@ -136,8 +140,9 @@
                     <i>Hint: </i>
                     This font doesnt look good with small font sizes. To recreate the logo you have to do an a few tweaks in CSS. Take a look at the very top of this page for an example
                     <div class="cyberpunk-font" style="font-size: 42px;">Cyberpunk</div> 42px
+                    <!-- #endregion -->
 
-                    <!-- Headings -->
+                    <!-- #region Headings -->
                     <h1 class="cyber-h">Headings</h1>
 
                     You can add class <code>.cyber-h</code> to style your headings. 
@@ -150,47 +155,73 @@
                     <h5 class="cyber-h">Heading h5</h5>
                     <h6 class="cyber-h">Heading h6</h6>
                     <span class="cyber-h">A normal <code>&lt;span&gt;</code></span>
+                    <!-- #endregion -->
 
-                    <!-- Glitching Effects -->
+                    <!-- #region Glitching Effects -->
                     <h1 class="cyber-h">Glitching effects</h1>
 
-                    Cyberpunk CSS provides a set of glitching effects which fit the theme. Use the classes <code>.glitch-0</code> to <code>.glitch-4</code><br>
+                    Cyberpunk CSS provides a set of glitching effects which fit the theme. Use the classes <code>.cyber-glitch-0</code> to <code>.cyber-glitch-4</code><br>
                     They create an impression of instable tech an small errors/glitches in the matrix. Not all effects work well with every element. Some are good for texts, other are good for images or containers.  
 
-                    <h3 class="cyber-h">.glitch-0</h3>
+                    <h3 class="cyber-h">.cyber-glitch-0</h3>
                     <p>
                         Good for images. Effect of a flickering screen. Sometimes bright, sometimes dark.
                     </p>
-                    <img src="img/tile4.jpg" class="glitch-0"> 
+                    <img src="img/tile4.jpg" class="cyber-glitch-0"> 
 
-                    <h3 class="cyber-h">.glitch-1</h3>
+                    <h3 class="cyber-h">.cyber-glitch-1</h3>
                     <p>
                         Good for images. Little shakes first, then distorting/breaking effect by rotating and inverting colors.
                     </p>
-                    <img src="img/tile3.jpg" class="glitch-1">
+                    <img src="img/tile3.jpg" class="cyber-glitch-1">
 
-                    <h3 class="cyber-h">.glitch-2</h3>
+                    <h3 class="cyber-h">.cyber-glitch-2</h3>
                     <p>
                         Good for containers with text. Squeeze effect by removing top an bottom of the element, shake left to right, apply glitchy text-shadow.<br>
                         If your element uses uses css <code>clip-path</code>, this might not look good. You can try to set the variable <code>--og-clip-path</code> to the clip path of your element, so this animation can revert back to the original state.
                     </p>
-                    <div class="cyber-tile bg-green fg-white glitch-2">
+                    <div class="cyber-tile bg-green fg-white cyber-glitch-2">
                         <label>
                             Somehow this will get torn apart.<br>
                             Take care, never ride the streets of night city alone.
                         </label>
                     </div>
 
-                    <h3 class="cyber-h"><span class="glitch-3">.</span>glitch<span class="glitch-3">-</span>3</h3>
+                    <h3 class="cyber-h"><span class="cyber-glitch-3">.</span>glitch<span class="cyber-glitch-3">-</span>3</h3>
                     <p>
                         Good for text. Especially small parts like dots or underlines. Steady blinking.
                     </p>
 
-                    <h3 class="cyber-h glitch-4">.glitch-4</h3>
+                    <h3 class="cyber-h cyber-glitch-4">.cyber-glitch-4</h3>
                     <p>
                         Good for text. Blinking with different pauses in between.
                     </p>
+                    <!-- #endregion -->
                     
+                    <!-- #region Razors-->
+                    <h1 class="cyber-h">Razors</h1>
+                    <p>
+                        Show "razor" shaped borders at the top and bottom of your containers by adding the <code>.cyber-razor-top</code> and <code>.cyber-razor-bottom</code> classes.<br>
+                        Use <bode>bg-*</bode> for coloring. Works well with bigger <code>&lt;div&gt;</code> <code>&lt;section&gt;</code> as well as page headers or footer like here. The razor border takes up <i>30px</i> of space.
+                    </p>
+                    <div class="cyber-razor-bottom bg-dark fg-white p-3 mr-3 inline-block" style="width: 600px;">
+                        This is just a <code>&lt;div&gt;</code> with some sharp edges at the bottom.
+                    </div>
+
+                    <div class="cyber-razor-top bg-dark fg-white p-3 inline-block" style="width: 600px; vertical-align: middle;">
+                        This is just a <code>&lt;div&gt;</code> with some sharp edges at the top now.
+                    </div>
+
+                    <!-- #region Banner -->
+                    <h1 class="cyber-h">Banner</h1>
+                    <p>
+                        Colorfull banner for important messages.
+                    </p>
+                    <div id="code4" class="code-block mb-4" data-title="HTML:"></div>
+                    <div class="cyber-banner fg-dark">
+                        EDGERUNNERS UPDATE
+                    </div>
+
                 </div>
                 <div class="col-1"></div>
             </div>
@@ -198,7 +229,7 @@
         
         <div id="footer-spacer" class="mb-20"></div>
 
-        <div id="footer" class="bg-black fg-white razor-before p-2 fixed-bottom">
+        <div id="footer" class="bg-black fg-white cyber-razor-top p-2 fixed-bottom">
         </div>
     </body>
 </html>

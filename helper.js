@@ -36,6 +36,10 @@ codes[2] =
 codes[3] = 
 `<link rel="stylesheet" href="cyberpunk.css">`;
 
+codes[4] = 
+`<div class="cyber-banner fg-dark">*
+    Your text*
+</div>`;
 
     $(codes).each(function(index)
     {
