@@ -37,7 +37,12 @@ codes[3] =
 `<link rel="stylesheet" href="cyberpunk.css">`;
 
 codes[4] = 
-`<div class="cyber-banner fg-dark">*
+`<div class="cyber-banner">*
+    Your text*
+</div>`;
+
+codes[5] = 
+`<div class="cyber-banner-short bg-purple fg-white">*
     Your text*
 </div>`;
 

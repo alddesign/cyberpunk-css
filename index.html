@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="cyberpunk.css">
     </head>
 
-    <body style="min-width: 560px; overflow:auto;">
+    <body style="min-width: 480px; overflow:auto;">
         <div id="header" class="bg-black fg-white cyber-razor-bottom pt-0 pl-10 pb-8">
             <span class="cyberpunk-font-og f-x2-5">
                 <span class="c">C</span>yber <span class="p">P</span>unk 
@@ -23,6 +23,7 @@
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
+
                     <!-- #region About -->
                     <h1 class="cyber-h">About</h1>
                     Cyberpunk CSS is a CSS library, which provides Cyberpunk 2077 themed elements for your webpage.<br>
@@ -61,6 +62,27 @@
                             <div class="col p-4 bg-dark"><code>-dark</code></div>
                         </div>
                     </div>
+                    <!-- #endregion -->
+
+                    <!-- #region Inputs -->
+                    <h1 class="cyber-h">Inputs</h1>
+                    <label for="input-text">Text:</label>
+                    <div class="cyber-input mb-4">
+                        <input id="input-text" name="input-text" type="text" value="">
+                    </div>
+
+                    <label for="select">Select:</label>
+                    <div class="cyber-select mb-4">
+                        <select id="select" name="select">
+                            <option value="red">Red</option>
+                            <option value="cyan">Cyan</option>
+                            <option value="purple">Purple</option>
+                            <option value="yellow">Yellow</option>
+                        </select>
+                    </div>
+
+                    <label for="checkbox">Checkbox:</label>
+                    <input type="checkbox" class="cyber-check">
                     <!-- #endregion -->
 
                     <!-- #region Buttons -->
@@ -213,15 +235,22 @@
                     </div>
 
                     <!-- #region Banner -->
-                    <h1 class="cyber-h">Banner</h1>
+                    <h1 class="cyber-h">Banners</h1>
                     <p>
                         Colorfull banner for important messages.
+                        Use classes <code>.cyber-banner</code> and <code>cyber-banner-short</code>.<br>
+                        You can use <code>.bg-red</code>, <code>.bg-yellow</code> and <code>.bg-purple</code> to change the primary color of the gradient. Cyan is the default.
                     </p>
-                    <div id="code4" class="code-block mb-4" data-title="HTML:"></div>
-                    <div class="cyber-banner fg-dark">
-                        EDGERUNNERS UPDATE
+
+                    <div id="code4" class="code-block mt-6" data-title="HTML:"></div>
+                    <div class="cyber-banner mt-4">
+                        .cyber-banner
                     </div>
 
+                    <div id="code5" class="code-block mt-6" data-title="HTML:"></div>
+                    <div class="cyber-banner-short bg-purple fg-white mt-4">
+                        .cyber-banner-short .bg-purple
+                    </div>
                 </div>
                 <div class="col-1"></div>
             </div>

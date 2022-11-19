@@ -1,35 +1,4 @@
 /*#region top level elements*/
-:root 
-{
-    --root-font-size: 18px;
-
-    --yellow: #f8ef02;
-    --cyan: #00ffd2;
-    --red: #ff003c;
-    --blue: #136377;
-    --green: #446d44;
-    --purple: purple;
-    --black: #000;
-    --white: #fff;
-    --dark: #333;
-
-    --yellow-cyberpunk-font: #feef00;
-    --cyan-cyberpunk-font1:#46dffb;
-    --cyan-cyberpunk-font2:#45aefb;
-
-    --button-bg: var(--red);
-
-    --shimmy-distance: 5;
-    --glitch-duration: 4s;
-    --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
-    --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
-    --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
-    --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
-    --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
-    --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
-    --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
-}
-
 @font-face 
 {
     font-family:BlenderProBook;
@@ -50,6 +19,59 @@
 {
     font-family: Cyberpunk;
     src: url(fonts/Cyberpunk.otf) format('opentype');
+}
+
+:root 
+{
+    --root-font-size: 18px;
+
+    --yellow: #f8ef02;
+    --cyan: #00ffd2;
+    --red: #ff003c;
+    --blue: #136377;
+    --green: #446d44;
+    --purple: purple;
+    --black: #000;
+    --white: #fff;
+    --dark: #333;
+
+    --yellow-cyberpunk-font: #feef00;
+    --cyan-cyberpunk-font1:#46dffb;
+    --cyan-cyberpunk-font2:#45aefb;
+
+    --banner-color1: var(--purple); 
+    --banner-color2: var(--red);
+    --banner-color3: var(--yellow); 
+    --banner-color4: var(--cyan); 
+    --banner-gradient-stop: 405px;
+
+    --button-bg: var(--red);
+
+    --input-padding-top: 0px;
+    --input-padding-bot: 0.2rem;
+    --input-padding-left: 1rem;
+    --input-padding-right: 2rem;
+    --input-font-size: 1.2rem;
+    --input-width: 240px;
+
+    --shimmy-distance: 5;
+    --glitch-duration: 4s;
+    --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+    --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+    --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+    --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+    --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+}
+
+@media screen and (max-width: 768px)
+{
+    :root
+    {
+        --root-font-size: 14px;
+    }
+
 }
 
 html
@@ -256,11 +278,6 @@ body
 /*#endregion*/
 
 /*#region buttons*/
-* 
-{
-    box-sizing: border-box;
-}
-
 .cyber-button,
 .cyber-button-small,
 .cyber-button-big
@@ -742,11 +759,13 @@ h6.cyber-h
 }
 /*#endregion*/
 
-.cyber-banner
+/*#region banners*/
+
+.cyber-banner,
+.cyber-banner-short
 {
     width: 100%;
     height: 50px;
-    background: linear-gradient(90deg, #c9006d, #eb3f5d, #f5a12b, #fbe00b, #dced20, #6cf67b, #43f99c, #00ffd2 450px);
     background-repeat: no-repeat;
     font-size: 1.5rem;
     font-weight: 700;
@@ -754,22 +773,173 @@ h6.cyber-h
     line-height: 50px;
     overflow: hidden;
     clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0);
+    
+    /*default: --purple --red --yellow --cyan*/
+    background: linear-gradient(90deg, var(--banner-color1), var(--banner-color2), var(--banner-color3), var(--banner-color4) var(--banner-gradient-stop));
+}
+
+.cyber-banner-short
+{
+    --banner-gradient-stop: 220px;
+}
+
+.cyber-banner.bg-yellow,
+.cyber-banner-short.bg-yellow
+{
+    --banner-color1: var(--cyan);
+    --banner-color2: var(--purple);
+    --banner-color3: var(--red);
+    --banner-color4: var(--yellow);
+}
+
+.cyber-banner.bg-purple,
+.cyber-banner-short.bg-purple
+{
+    --banner-color1: var(--red);
+    --banner-color2: var(--yellow);
+    --banner-color3: var(--cyan);
+    --banner-color4: var(--purple);
+}
+
+.cyber-banner.bg-red,
+.cyber-banner-short.bg-red
+{
+    --banner-color1: var(--yellow);
+    --banner-color2: var(--cyan);
+    --banner-color3: var(--purple);
+    --banner-color4: var(--red);
 }
 
 /*
 Note: original file: speed.svg
 If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svgomg/ (import and download)
 */
-.cyber-banner::before
+.cyber-banner::before,
+.cyber-banner-short::before
 {
     content: " ";
-    display: block;
-    width: 405px;
     height: inherit;
-    z-index: 2;
+    display: block;
     float: left;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="405" height="50"><path d="M0 0v50h20L45 0zM47 0 22 50h28L75 0zM79 0 54 50h26l25-50zM111 0 86 50h24l25-50zM143 0l-25 50h22l25-50zM175 0l-25 50h20l25-50zM207 0l-25 50h18l25-50zM239 0l-25 50h16l25-50zM271 0l-25 50h14l25-50zM303 0l-25 50h12l25-50zM335 0l-25 50h10l25-50zM367 0l-25 50h8l25-50zM399 0l-25 50h6l25-50z"/></svg>');
     background-position: top left;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
+
+.cyber-banner::before
+{
+    width: 405px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="405" height="50"><path d="M0 0v50h20L45 0zM47 0 22 50h28L75 0zM79 0 54 50h26l25-50zM111 0 86 50h24l25-50zM143 0l-25 50h22l25-50zM175 0l-25 50h20l25-50zM207 0l-25 50h18l25-50zM239 0l-25 50h16l25-50zM271 0l-25 50h14l25-50zM303 0l-25 50h12l25-50zM335 0l-25 50h10l25-50zM367 0l-25 50h8l25-50zM399 0l-25 50h6l25-50z"/></svg>');
+}
+
+.cyber-banner-short::before
+{
+    width: 220px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="50"><path d="m0 0-10 50h20L35 0zM37 0 12 50h18L55 0zM59 0 34 50h16L75 0zM81 0 56 50h14L95 0zM103 0 78 50h12l25-50zM125 0l-25 50h10l25-50zM147 0l-25 50h8l25-50zM169 0l-25 50h6l25-50zM191 0l-25 50h4l25-50zM213 0l-25 50h2l25-50z"/></svg>')
+}
+/*#endregion*/
+
+/*#region edges*/
+
+/*#region inputs*/
+.cyber-input,
+.cyber-input-long,
+.cyber-input-full,
+.cyber-select,
+.cyber-select-long,
+.cyber-select-full
+{
+    font-size: var(--input-font-size);
+}
+
+.cyber-select,
+.cyber-select-long,
+.cyber-select-full
+{
+    background-color: transparent !important;
+}
+
+.cyber-input input,
+.cyber-input-long input,
+.cyber-input-full input,
+.cyber-select select,
+.cyber-select-long select,
+.cyber-select-full select
+{
+    width: var(--input-width);
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    padding: var(--input-padding-top) var(--input-padding-right) var(--input-padding-bot) var(--input-padding-left);
+    border: none;
+    text-decoration: none;
+    outline: none;
+}
+
+.cyber-input-long input,
+.cyber-select-long select
+{
+    --input-width: 320px;
+}
+
+.cyber-input-full input,
+.cyber-select-full select
+{
+    --input-width: 100%;
+}
+
+
+.cyber-select select,
+.cyber-select-long select,
+.cyber-select-full select
+{
+    width: calc(var(--input-width) + var(--input-padding-left) + var(--input-padding-right));
+    font-family: BlenderProBook;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><path d="m0 50 100 100L200 50h-50l-50 50-50-50z"/></svg>');
+    background-size: var(--input-font-size) var(--input-font-size);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.cyber-select select option,
+.cyber-select-long select option,
+.cyber-select-full select option
+{
+    font-family: "Courier New";
+    font-size: .8rem;
+}
+
+.cyber-input::before,
+.cyber-input-long::before,
+.cyber-input-full::before,
+.cyber-select::before,
+.cyber-select-long::before,
+.cyber-select-full::before
+{
+    content: 'X';
+    color: transparent;
+    position: absolute;
+    display: block;
+    width: var(--input-width);
+    padding: var(--input-padding-top) var(--input-padding-right) var(--input-padding-bot) var(--input-padding-left);
+    clip-path: polygon(0 calc(100% - 10px), 10px 100%, 100% 100%, 100% calc(100% - 8px), calc(100% - 20px) calc(100% - 8px), calc(100% - 20px - 8px) calc(100% - 2px), 11px calc(100% - 2px), 0 calc(100% - 13px));
+    background-color: var(--black);
+}
+
+.cyber-select::before,
+.cyber-select-long::before,
+.cyber-select-full::before
+{
+    clip-path: polygon(0 calc(100% - 12px), 0 100%, 100% 100%, 100% calc(100% - 2px), 12px calc(100% - 2px));
+}
+
+
+.cyber-check
+{
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--black);
+}
+/*#endregion*/
