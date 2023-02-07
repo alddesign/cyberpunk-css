@@ -1,4 +1,5 @@
-/*#region top level elements*/
+/* cyberpunk-css by alddesign: https://github.com/alddesign/cyberpunk-css */
+/*#region fonts*/
 @font-face 
 {
     font-family:BlenderProBook;
@@ -20,7 +21,9 @@
     font-family: Cyberpunk;
     src: url(fonts/Cyberpunk.otf) format('opentype');
 }
+/*#endregion*/
 
+/*#region top level elements*/
 :root 
 {
     --root-font-size: 18px;
@@ -46,6 +49,7 @@
     --banner-gradient-stop: 405px;
 
     --button-bg: var(--red);
+    --accent: var(--black);
 
     --input-padding-top: 0px;
     --input-padding-bot: 0.2rem;
@@ -54,15 +58,11 @@
     --input-font-size: 1.2rem;
     --input-width: 240px;
 
-    --shimmy-distance: 5;
-    --glitch-duration: 4s;
-    --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
-    --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
-    --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
-    --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
-    --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
-    --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
-    --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+    --checkbox-size: 28px;
+    --checkbox-inner-size: 16px;
+
+    --radio-size: 28px;
+    --radio-inner-size: 16px;
 }
 
 html
@@ -128,7 +128,7 @@ body
 
 /*#region colors*/
 .fg-yellow
-{ color: var(--yellow); }
+{ color: var(--yellow) !important; }
 .bg-yellow,
 .bg-yellow.cyber-razor-top::before,
 .bg-yellow.cyber-razor-bottom::after 
@@ -137,9 +137,11 @@ body
 .bg-yellow.cyber-button-small,
 .bg-yellow.cyber-button-big
 { --button-bg: var(--yellow); }
+.ac-yellow
+{ --accent: var(--yellow); }
 
 .fg-cyan
-{ color: var(--cyan); }
+{ color: var(--cyan) !important; }
 .bg-cyan,
 .bg-cyan.cyber-razor-top::before,
 .bg-cyan.cyber-razor-bottom::after
@@ -148,30 +150,37 @@ body
 .bg-yellow.cyber-button-small,
 .bg-yellow.cyber-button-big
 { --button-bg: var(--yellow); }
+.ac-cyan
+{ --accent: var(--cyan); }
 
 .fg-red
-{ color: var(--red); }
+{ color: var(--red) !important; }
 .bg-red,
 .bg-red.cyber-razor-top::before,
-.bg-red.cyber-razor-bottom::after,
-.fg-red.cyber-h::after
+.bg-red.cyber-razor-bottom::after
 { background-color: var(--red); }
 .bg-red.cyber-button,
 .bg-red.cyber-button-small,
 .bg-red.cyber-button-big
 { --button-bg: var(--red); }
+.ac-red
+{ --accent: var(--red); }
 
-.fg-blue{ color: var(--blue); }
-.bg-blue{ background-color: var(--blue); }
-.bg-blue.cyber-razor-top::before{ background-color: var(--blue); }
-.bg-blue.cyber-razor-bottom::after{ background-color: var(--blue); }
+.fg-blue
+{ color: var(--blue) !important; }
+.bg-blue,
+.bg-blue.cyber-razor-top::before,
+.bg-blue.cyber-razor-bottom::after
+{ background-color: var(--blue); }
 .bg-blue.cyber-button,
 .bg-blue.cyber-button-small,
 .bg-blue.cyber-button-big
 { --button-bg: var(--blue); }
+.ac-blue
+{ --accent: var(--blue); }
 
 .fg-green
-{ color: var(--green); }
+{ color: var(--green) !important; }
 .bg-green,
 .bg-green.cyber-razor-top::before,
 .bg-green.cyber-razor-bottom::after
@@ -180,9 +189,11 @@ body
 .bg-green.cyber-button-small,
 .bg-green.cyber-button-big
 { --button-bg: var(--green); }
+.ac-green
+{ --accent: var(--green); }
 
 .fg-purple
-{ color: var(--purple); }
+{ color: var(--purple) !important; }
 .bg-purple,
 .bg-purple.cyber-razor-top::before,
 .bg-purple.cyber-razor-bottom::after
@@ -191,9 +202,11 @@ body
 .bg-purple.cyber-button-small,
 .bg-purple.cyber-button-big
 { --button-bg: var(--purple); }
+.ac-purple
+{ --accent: var(--purple); }
 
 .fg-black
-{ color: var(--black); }
+{ color: var(--black) !important; }
 .bg-black,
 .bg-black.cyber-razor-top::before,
 .bg-black.cyber-razor-bottom::after
@@ -202,9 +215,11 @@ body
 .bg-black.cyber-button-small,
 .bg-black.cyber-button-big
 { --button-bg: var(--black); }
+.ac-black
+{ --accent: var(--black); }
 
 .fg-white
-{ color: var(--white); }
+{ color: var(--white) !important; }
 .bg-white,
 .bg-white.cyber-razor-top::before,
 .bg-white.cyber-razor-bottom::after
@@ -213,9 +228,11 @@ body
 .bg-white.cyber-button-small,
 .bg-white.cyber-button-big
 { --button-bg: var(--white); }
+.ac-white
+{ --accent: var(--white); }
 
 .fg-dark
-{ color: var(--dark); }
+{ color: var(--dark) !important; }
 .bg-dark,
 .bg-dark.cyber-razor-top::before,
 .bg-dark.cyber-razor-bottom::after
@@ -224,6 +241,8 @@ body
 .bg-dark.cyber-button-small,
 .bg-dark.cyber-button-big
 { --button-bg: var(--dark); }
+.ac-dark
+{ --accent: var(--dark); }
 /*#endregion*/
 
 /*#region razor*/
@@ -279,29 +298,36 @@ body
 .cyber-button-small,
 .cyber-button-big
 {
-    --shadow-primary: var(--cyan);
-    --shadow-secondary: var(--yellow);
-
-    /*--clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);*/
-    --cutout: 20px;
-    --clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 80% 90%, 80% 100%, var(--cutout) 100%, 0 calc(100% - var(--cutout)));
-
     --button-border: 4px;
-    --button-font-size: 26px;
-    --button-font-size-mod: 1;
-    --button-padding-v: 16px;
-    --button-padding-h: 48px;
-    --button-padding-mod: 1;
-    --tag-font-size: 10px;
-    --tag-font-size-mod: 1;
+    --button-font-size: 1.4rem;
+    --button-padding-v: 0.9rem;
+    --button-padding-h: 2.5rem;
+
+    --tag-font-size: 0.55rem;
+
+    --button-cutout: 1.1rem;
+
+    --button-shadow-primary: var(--cyan);
+    --button-shadow-secondary: var(--yellow);
+    --button-shimmy-distance: 5;
+
+    --button-clip-1: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+    --button-clip-2: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+    --button-clip-3: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+    --button-clip-4: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --button-clip-5: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --button-clip-6: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+    --button-clip-7: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+
+    --button-clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 80% 90%, 80% 100%, var(--button-cutout) 100%, 0 calc(100% - var(--button-cutout)));
 
     cursor: pointer;
     background: transparent !important;
     text-transform: uppercase;
-    font-size: calc(var(--button-font-size) * var(--button-font-size-mod));
+    font-size: var(--button-font-size);
     font-weight: 700;
     letter-spacing: 2px;
-    padding: calc(var(--button-padding-v) * var(--button-padding-mod)) calc(var(--button-padding-h) * var(--button-padding-mod));
+    padding: var(--button-padding-v) var(--button-padding-h);
     outline: transparent;
     position: relative;
     border: 0;
@@ -311,16 +337,18 @@ body
 /*Overriding*/
 .cyber-button-small
 {
-    --button-padding-mod: 0.7;
-    --button-font-size-mod: 0.7;
-    --cutout: 14px;
+    --button-padding-v: 0.6rem;
+    --button-padding-h: 1.75rem;
+    --button-font-size: 1.0rem;
+    --button-cutout: 0.77rem;
 }
 
 .cyber-button-big
 {
-    --button-padding-mod: 1.2;
-    --button-font-size-mod: 1.2;
-    --cutout: 26px;
+    --button-padding-v: 1.1rem;
+    --button-padding-h: 3.0rem;
+    --button-font-size: 1.75rem;
+    --button-cutout: 1.44rem;
 }
 
 .cyber-button:hover,
@@ -343,7 +371,7 @@ body
     left: 0;
     right: 0;
     bottom: 0;
-    clip-path: var(--clip);
+    clip-path: var(--button-clip);
     z-index: -1;
 }
 
@@ -351,7 +379,7 @@ body
 .cyber-button-small:before,
 .cyber-button-big:before
 {
-    background: var(--shadow-primary);
+    background: var(--button-shadow-primary);
     transform: translate(var(--button-border), 0);
 }
 
@@ -368,22 +396,22 @@ body
 {
     position: absolute;
     letter-spacing: 1px;
-    bottom: -6%;
-    right: 5%;
+    bottom: -5%;
+    right: 6%;
     font-weight: normal;
     color: #000;
-    font-size: calc(var(--tag-font-size) * var(--tag-font-size-mod));
+    font-size: var(--tag-font-size);
 }
 
 .cyber-button-small .tag
 {
-    --tag-font-size-mod: 0.8;
+    --tag-font-size: 0.44rem;
     bottom: -8%;
 }
 
 .cyber-button-big .tag
 {
-    --tag-font-size-mod: 1.2;
+    --tag-font-size: 0.66rem;
     bottom: -5%;
 }
 
@@ -396,11 +424,11 @@ body
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--shadow-primary);
-    text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
-    clip-path: var(--clip);
-    animation: glitch var(--glitch-duration) infinite;
-    padding: calc(var(--button-padding-v) * var(--button-padding-mod)) calc(var(--button-padding-h) * var(--button-padding-mod));
+    background: var(--button-shadow-primary);
+    text-shadow: 2px 2px var(--button-shadow-primary), -2px -2px var(--button-shadow-secondary);
+    clip-path: var(--button-clip);
+    animation: glitch 4s infinite;
+    padding: var(--button-padding-v) var(--button-padding-h);
     display: none;
 }
 
@@ -421,7 +449,7 @@ body
     right: calc(var(--button-border) * 1);
     bottom: calc(var(--button-border) * 1);
     left: calc(var(--button-border) * 1);
-    clip-path: var(--clip);
+    clip-path: var(--button-clip);
     background-color: var(--button-bg);
     z-index: -1;
 }
@@ -429,62 +457,62 @@ body
 @keyframes glitch 
 {
     0% {
-        clip-path: var(--clip-one);
+        clip-path: var(--button-clip-1);
     }
     2%, 8% {
-        clip-path: var(--clip-two);
-        transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+        clip-path: var(--button-clip-2);
+        transform: translate(calc(var(--button-shimmy-distance) * -1%), 0);
     }
     6% {
-        clip-path: var(--clip-two);
-        transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        clip-path: var(--button-clip-2);
+        transform: translate(calc(var(--button-shimmy-distance) * 1%), 0);
     }
     9% {
-        clip-path: var(--clip-two);
+        clip-path: var(--button-clip-2);
         transform: translate(0, 0);
     }
     10% {
-        clip-path: var(--clip-three);
-        transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        clip-path: var(--button-clip-3);
+        transform: translate(calc(var(--button-shimmy-distance) * 1%), 0);
     }
     13% {
-        clip-path: var(--clip-three);
+        clip-path: var(--button-clip-3);
         transform: translate(0, 0);
     }
     14%, 21% {
-        clip-path: var(--clip-four);
-        transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        clip-path: var(--button-clip-4);
+        transform: translate(calc(var(--button-shimmy-distance) * 1%), 0);
     }
     25% {
-        clip-path: var(--clip-five);
-        transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        clip-path: var(--button-clip-5);
+        transform: translate(calc(var(--button-shimmy-distance) * 1%), 0);
     }
     30% {
-        clip-path: var(--clip-five);
-        transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+        clip-path: var(--button-clip-5);
+        transform: translate(calc(var(--button-shimmy-distance) * -1%), 0);
     }
     35%, 45% {
-        clip-path: var(--clip-six);
-        transform: translate(calc(var(--shimmy-distance) * -1%));
+        clip-path: var(--button-clip-6);
+        transform: translate(calc(var(--button-shimmy-distance) * -1%));
     }
     40% {
-        clip-path: var(--clip-six);
-        transform: translate(calc(var(--shimmy-distance) * 1%));
+        clip-path: var(--button-clip-6);
+        transform: translate(calc(var(--button-shimmy-distance) * 1%));
     }
     50% {
-        clip-path: var(--clip-six);
+        clip-path: var(--button-clip-6);
         transform: translate(0, 0);
     }
     55% {
-        clip-path: var(--clip-seven);
-        transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        clip-path: var(--button-clip-7);
+        transform: translate(calc(var(--button-shimmy-distance) * 1%), 0);
     }
     60% {
-        clip-path: var(--clip-seven);
+        clip-path: var(--button-clip-7);
         transform: translate(0, 0);
     }
     31%, 61%, 100% {
-        clip-path: var(--clip-four);
+        clip-path: var(--button-clip-4);
     }
 }
 /*#endregion*/
@@ -708,7 +736,7 @@ code,
     width: 100%;
     height: 6px;
     display: block;
-    background-color: var(--black);
+    background-color: var(--accent);
     clip-path: polygon(0 0, 0 100%, 10% 100%, calc(10% + 4px) 2px, 100% 2px, 100% 0);
 }
 
@@ -757,7 +785,6 @@ h6.cyber-h
 /*#endregion*/
 
 /*#region banners*/
-
 .cyber-banner,
 .cyber-banner-short
 {
@@ -807,10 +834,7 @@ h6.cyber-h
     --banner-color4: var(--red);
 }
 
-/*
-Note: original file: speed.svg
-If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svgomg/ (import and download)
-*/
+
 .cyber-banner::before,
 .cyber-banner-short::before
 {
@@ -823,6 +847,9 @@ If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svg
     background-size: cover;
 }
 
+/*
+Note: Inline svg shit doesnt work sometimes. Make sure to optimize it with https://jakearchibald.github.io/svgomg/ (import and download)
+*/
 .cyber-banner::before
 {
     width: 405px;
@@ -835,8 +862,6 @@ If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svg
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="50"><path d="m0 0-10 50h20L35 0zM37 0 12 50h18L55 0zM59 0 34 50h16L75 0zM81 0 56 50h14L95 0zM103 0 78 50h12l25-50zM125 0l-25 50h10l25-50zM147 0l-25 50h8l25-50zM169 0l-25 50h6l25-50zM191 0l-25 50h4l25-50zM213 0l-25 50h2l25-50z"/></svg>')
 }
 /*#endregion*/
-
-/*#region edges*/
 
 /*#region inputs*/
 .cyber-input,
@@ -894,10 +919,8 @@ If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svg
     width: calc(var(--input-width) + var(--input-padding-left) + var(--input-padding-right));
     font-family: BlenderProBook;
     appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><path d="m0 50 100 100L200 50h-50l-50 50-50-50z"/></svg>');
-    background-size: var(--input-font-size) var(--input-font-size);
-    background-position: right center;
-    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .cyber-select select option,
@@ -905,7 +928,7 @@ If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svg
 .cyber-select-full select option
 {
     font-family: "Courier New";
-    font-size: .8rem;
+    font-size: .85rem;
 }
 
 .cyber-input::before,
@@ -922,22 +945,140 @@ If inline shit doesnt work, optimize it with https://jakearchibald.github.io/svg
     width: var(--input-width);
     padding: var(--input-padding-top) var(--input-padding-right) var(--input-padding-bot) var(--input-padding-left);
     clip-path: polygon(0 calc(100% - 10px), 10px 100%, 100% 100%, 100% calc(100% - 8px), calc(100% - 20px) calc(100% - 8px), calc(100% - 20px - 8px) calc(100% - 2px), 11px calc(100% - 2px), 0 calc(100% - 13px));
-    background-color: var(--black);
+    background-color: var(--accent);
 }
 
 .cyber-select::before,
 .cyber-select-long::before,
 .cyber-select-full::before
+{ 
+    clip-path: polygon(0 calc(100% - 12px), 0 100%, calc(100% - 30px) 100%, calc(100% - 30px) 110%, calc(100% - 20px) 110%, calc(100% - 20px) calc(100% - 8px), calc(100% - 30px) calc(100% - 18px), calc(100% - 10px) calc(100% - 18px), calc(100% - 20px) calc(100% - 8px), calc(100% - 20px) 110%, calc(100% - 30px) 110%, calc(100% - 30px) calc(100% - 2px), 10px calc(100% - 2px));
+    z-index: -1;
+}
+
+.cyber-check,
+.cyber-radio
 {
-    clip-path: polygon(0 calc(100% - 12px), 0 100%, 100% 100%, 100% calc(100% - 2px), 12px calc(100% - 2px));
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    border: 2px solid var(--black);
+    border-radius: 3px;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    vertical-align: middle;
+    margin: 0;
+    cursor: pointer;
+}
+
+.cyber-check::before,
+.cyber-radio::before
+{
+    content: "";
+    width: var(--checkbox-inner-size);
+    height: var(--checkbox-inner-size);
+    background-color: var(--accent);
+    position: relative;
+    top: calc((var(--checkbox-size) - var(--checkbox-inner-size)) / 2 - 2px);
+    left: calc((var(--checkbox-size) - var(--checkbox-inner-size)) / 2 - 2px);
+    display: block;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: 120ms transform ease-in-out;
+    transition: 120ms transform ease-in-out;
+
+}
+
+.cyber-check:checked:before,
+.cyber-radio:checked:before
+{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.cyber-radio
+{
+    border-radius: 50%;
+}
+
+.cyber-radio::before
+{
+    border-radius: 50%;
+}
+
+label
+{
+    vertical-align: middle;
+}
+
+/*#endregion*/
+
+/*#region lists*/
+.cyber-ul,
+.cyber-ul-1,
+.cyber-ul-2
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cyber-ul li,
+.cyber-ul-1 li,
+.cyber-ul-2 li
+{
+    margin-bottom: .25rem;
+}
+
+.cyber-ul-1,
+.cyber-ul-2
+{
+    padding-left: 1.5rem;
 }
 
 
-.cyber-check
+.cyber-ul li::before,
+.cyber-ul-1 li::before,
+.cyber-ul-2 li::before
 {
+    content: " ";
     width: 1rem;
     height: 1rem;
-    border: 1px solid var(--black);
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path d="m50 0 50 50-80 50z"/></svg>');
+    -webkit-mask-position: top left;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 1rem 1rem;
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path d="m50 0 50 50-80 50z"/></svg>');
+    mask-position: top left;
+    mask-repeat: no-repeat;
+    mask-size: 1rem 1rem;
+    background-color: var(--accent);
+    display: inline-block;
+    margin-right: .5rem;
+    vertical-align: middle;
+}
+
+.cyber-ul-1 li::before
+{
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path fill="none" stroke="black" stroke-width="10" d="m50 8 40 40-62 40z"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path fill="none" stroke="black" stroke-width="10" d="m50 8 40 40-62 40z"/></svg>');
+}
+
+.cyber-ul-2 li::before
+{
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path fill="none" stroke="black" stroke-width="5" d="m50 4 44 44-70 46z"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path fill="none" stroke="black" stroke-width="5" d="m50 4 44 44-70 46z"/></svg>');
+}
+/*#endregion*/
+
+/*#region a*/
+.cyber-a
+{
+    color: var(--blue);
+}
+.cyber-a:hover
+{
+    text-shadow: var(--cyan) 0px 0px 1px;
 }
 /*#endregion*/
 

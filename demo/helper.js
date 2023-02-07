@@ -46,6 +46,29 @@ codes[5] =
     Your text*
 </div>`;
 
+codes[6] = 
+`<div class="cyber-input">*
+    <input type="text" placeholder="some text..." />*
+</div>*`;
+
+codes[7] =
+`<div class="cyber-select">*
+    <select>*
+        <option value="red">Red</option>*
+        <option value="cyan">Cyan</option>*
+    </select>*
+</div>`;
+
+codes[8] =
+`<input type="checkbox" class="cyber-check ac-blue"/>`;
+
+codes[9] =
+`
+<input type="radio" id="stable" name="radio" class="cyber-radio ac-green" value="0"/>*
+<input type="radio" id="unstable" name="radio" class="cyber-radio ac-purple" value="1"/>*
+<input type="radio" id="down" name="radio" class="cyber-radio ac-red" value="2"/>
+`;
+
     $(codes).each(function(index)
     {
         $("#code" + String(index)).html(encode(String(this)));

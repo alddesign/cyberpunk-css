@@ -4,39 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" lang="en">
         <title>cyberpunk css</title>
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="jquery-3.6.1.min.js"></script>
         <script src="helper.js?v=1"></script>
 
         <link rel="stylesheet" href="cyber-grid.css?v=1">
-        <link rel="stylesheet" href="cyberpunk.css?v=1">
+        <link rel="stylesheet" href="../cyberpunk.css?v=1">
+        <link rel="stylesheet" href="style.css?v=1">
 
-        <style type="text/css">
-            @media screen and (max-width: 768px)
-            {
-                #header
-                {
-                    padding-left: 16px !important;
-                    padding-bottom: 8px !important;
-                }
-
-                #header-css
-                {
-                    padding-left: 24px !important;
-                }
-
-                #colors .col
-                {
-                    padding: 8px !important;
-                }
-
-                .cyber-tile,
-                .cyber-tile-big,
-                .cyber-tile-small
-                {
-                    margin-right: 0 !important;
-                }
-            }
-        </style>
     </head>
 
     <body>
@@ -54,24 +28,44 @@
 
                     <!-- #region About -->
                     <h1 class="cyber-h">About</h1>
+                    <p>
                     Cyberpunk CSS is a CSS library, which provides Cyberpunk 2077 themed elements for your webpage.<br>
-                    It is not a complete framework like bootstrap or metro ui. Therefore it doesnt include structural elements, grid systems, page responsiveness, and so on.<br>
-
-                    <h3 class="cyber-h">Getting started</h3>
-                    <p>
-                        Include <code>cyberpunk.css</code> in the <code>&lt;head&gt;</code> tag of your page:
-                    </p>
-                    <div class="code-block" id="code3"></div>
-                    <p>
-                        This page is an example of what can be achived with this library. Take a look at the source code to check out the details.<br>
-                        <code>cyber-grid.css</code> is not required. It is only used for the basic structural layout of this demo page. 
+                    It is not a complete frontend framework like bootstrap. Therefore it does not include structural elements like grid systems, page responsiveness, and so on. 
+                    I really recommend <a href="https://metroui.org.ua/intro.html" target="_blank" class="cyber-a">Metro UI</a> for that.<br>
                     </p>
                     <!-- #endregion -->
 
-                    <!-- #region Colors -->
-                    <h1 class="cyber-h">Colors</h1>
+                    <!-- #region Getting Started -->
+                    <h1 class="cyber-h">Getting started</h3>
                     <p>
-                        Use classes <code>bg-*</code> for background colors and <code>fg-*</code> for text colors.<br>
+                        Just include <code>cyberpunk.css</code> in your HTML page.<br>
+                        Make sure to move the <code>./fonts</code> folder to the same location as <code>cyberpunk.css</code>
+                    </p>
+                    <div class="code-block" id="code3" data-title="HTML:"></div>
+                    <p>
+                        This page is an example of what can be achived with this library. Take a look at the source code to check out the details.<br>
+                        Other files like cyber-grid.css, style.css, helper.js from the ./demo folder are not required. They are only used for the basic structural layout of this demo page. However, feel free to use them.
+                    </p>
+                    <!-- #endregion -->
+
+                    <h1 class="cyber-h">Elements</h1>
+                    <ul class="cyber-ul">
+                        <li><a href="#section-colors" class="cyber-a">Colors</a></li>
+                        <li><a href="#section-inputs" class="cyber-a">Inputs</a></li>
+                        <li><a href="#section-buttons" class="cyber-a">Buttons</a></li>
+                        <li><a href="#section-tiles" class="cyber-a">Tiles</a></li>
+                        <li><a href="#section-source-code" class="cyber-a">Source Code</a></li>
+                        <li><a href="#section-fonts" class="cyber-a">Fonts</a></li>
+                        <li><a href="#section-headings" class="cyber-a">Headings</a></li>
+                        <li><a href="#section-glitch-effects" class="cyber-a">Glitch effects</a></li>
+                        <li><a href="#section-razors" class="cyber-a">Razors</a></li>
+                        <li><a href="#section-banners" class="cyber-a">Banners</a></li>
+                    </ul>
+
+                    <!-- #region Colors -->
+                    <h1 id="section-colors" id="section-colors" class="cyber-h">Colors</h1>
+                    <p>
+                        Use the <code>.bg-*</code> class for background colors and <code>.fg-*</code> for text colors. <code>.ac-*</code> is for the accent color of specific elements such as <code>.cyber-input</code> or <code>.cyber-check</code><br>
                         Most of the following elements are designed to work with these two classes (buttons for example).
                     </p>
                     <p>
@@ -93,13 +87,29 @@
                     <!-- #endregion -->
 
                     <!-- #region Inputs -->
-                    <h1 class="cyber-h">Inputs</h1>
-                    <label for="input-text">Text:</label>
+                    <h1 id="section-inputs" class="cyber-h">Inputs</h1>
+                    <p>
+                        See code examples below to create custom inputs.<br>
+                        Use for example <code>.cyber-input-long</code> and <code>.cyber-input-full</code> for even bigger input fields. Add the <code>.ac-*</code> classes to change the accent color of the input fields.
+                    </p>
+
+                    <h2 class="cyber-h">Text input</h2>
+                    <p>
+                        <div class="code-block" id="code6" data-title="HTML:"></div>
+                    </p>
+                    <p>
+                        Works also with other textfield-like input types such as password, number, date,...
+                    </p>
+                    <label for="input-text">Name:</label>
                     <div class="cyber-input mb-4">
-                        <input id="input-text" name="input-text" type="text" value="">
+                        <input id="input-text" name="input-text" type="text" value="" placeholder="some text..." />
                     </div>
 
-                    <label for="select">Select:</label>
+                    <h2 class="cyber-h">Select</h2>
+                    <p>
+                        <div class="code-block" id="code7" data-title="HTML:"></div>
+                    </p>
+                    <label for="select">Color:</label>
                     <div class="cyber-select mb-4">
                         <select id="select" name="select">
                             <option value="red">Red</option>
@@ -109,12 +119,37 @@
                         </select>
                     </div>
 
-                    <label for="checkbox">Checkbox:</label>
-                    <input type="checkbox" class="cyber-check">
+                    <h2 class="cyber-h">Checkbox</h2>
+                    <p>
+                        <div class="code-block" id="code8" data-title="HTML:"></div>
+                    </p>
+                    <input type="checkbox" id="checkbox" class="cyber-check ac-blue"/>
+                    <label for="checkbox" class="ml-1">Activte</label>
+
+                    <h2 class="cyber-h">Radio Buttons</h2>
+                    <p>
+                        <div class="code-block" id="code9" data-title="HTML:"></div>
+                    </p>
+                    <b>System Status</b>
+                    <div class="mb-1 mt-1">
+                        <input type="radio" id="stable" name="radio" class="cyber-radio ac-green" value="0"/>
+                        <label for="stable" class="ml-1">stable</label>
+                    </div>
+
+                    <div class="mb-1">
+                        <input type="radio" id="unstable" name="radio" class="cyber-radio ac-purple" value="1"/>
+                        <label for="unstable" class="ml-1">unstable</label>
+                    </div>
+
+                    <div class="mb-1">
+                        <input type="radio" id="down" name="radio" class="cyber-radio ac-red" value="2"/>
+                        <label for="down" class="ml-1">down</label>
+                    </div>
+
                     <!-- #endregion -->
 
                     <!-- #region Buttons -->
-                    <h1 class="cyber-h">Buttons</h1>
+                    <h1 id="section-buttons" class="cyber-h">Buttons</h1>
                     <p>
                         Example code for buttons:
                     </p>
@@ -138,7 +173,7 @@
                     <!-- #endregion -->
 
                     <!-- #region Tiles -->
-                    <h1 class="cyber-h">Tiles</h1>
+                    <h1 id="section-tiles" class="cyber-h">Tiles</h1>
                         <p>
                             General purpose containers for text and/or images.
                         </p>
@@ -160,7 +195,7 @@
                     <!-- #endregion -->
 
                     <!-- #region Source Code -->
-                    <h1 class="cyber-h">SourceCode();</h1>
+                    <h1 id="section-source-code" class="cyber-h">SourceCode();</h1>
                     <p>
                         Use the <code>&lt;code&gt;</code> tags or class <code>.code</code> to show inline code examples like this one here.
                     </p>
@@ -171,9 +206,9 @@
                     <!-- #endregion -->
 
                     <!-- #region Fonts -->
-                    <h1 class="cyber-h">Fonts</h1>
+                    <h1 id="section-fonts" class="cyber-h">Fonts</h1>
 
-                    Cyberpunk CSS also provides three fonts that fit this theme.
+                    Cyberpunk CSS also provides three fonts which fit the theme:
 
                     <h3 class="cyber-h">BlenderProBook</h3>
                     Is the default font which is used for the whole page.
@@ -193,9 +228,9 @@
                     <!-- #endregion -->
 
                     <!-- #region Headings -->
-                    <h1 class="cyber-h">Headings</h1>
+                    <h1 id="section-headings" class="cyber-h">Headings</h1>
 
-                    You can add class <code>.cyber-h</code> to style your headings. 
+                    Use class <code>.cyber-h</code> to apply styles to your headings. 
                     Can be used with <code>&lt;h*&gt;</code> but also with other elements like <code>&lt;span&gt;</code> or <code>&lt;div&gt;</code>. All elements will be displayed as a block level element.
                     
                     <h1 class="cyber-h">Heading h1</h1>
@@ -207,8 +242,8 @@
                     <span class="cyber-h">A normal <code>&lt;span&gt;</code></span>
                     <!-- #endregion -->
 
-                    <!-- #region Glitching Effects -->
-                    <h1 class="cyber-h">Glitching effects</h1>
+                    <!-- #region Glitch Effects -->
+                    <h1 id="section-glitch-effects" class="cyber-h">Glitch effects</h1>
 
                     Cyberpunk CSS provides a set of glitching effects which fit the theme. Use the classes <code>.cyber-glitch-0</code> to <code>.cyber-glitch-4</code><br>
                     They create an impression of instable tech an small errors/glitches in the matrix. Not all effects work well with every element. Some are good for texts, other are good for images or containers.  
@@ -249,7 +284,7 @@
                     <!-- #endregion -->
                     
                     <!-- #region Razors-->
-                    <h1 class="cyber-h">Razors</h1>
+                    <h1 id="section-razors" class="cyber-h">Razors</h1>
                     <p>
                         Show "razor" shaped borders at the top and bottom of your containers by adding the <code>.cyber-razor-top</code> and <code>.cyber-razor-bottom</code> classes.<br>
                         Use <bode>bg-*</bode> for coloring. Works well with bigger <code>&lt;div&gt;</code> <code>&lt;section&gt;</code> as well as page headers or footer like here. The razor border takes up <i>30px</i> of space.
@@ -263,8 +298,8 @@
                     </div>
                     <!-- #endregion -->
 
-                    <!-- #region Banner -->
-                    <h1 class="cyber-h">Banners</h1>
+                    <!-- #region Banners -->
+                    <h1 id="section-banners" class="cyber-h">Banners</h1>
                     <p>
                         Colorfull banner for important messages.
                         Use classes <code>.cyber-banner</code> and <code>cyber-banner-short</code>.<br>
@@ -286,7 +321,7 @@
             </div>
         </div>
         
-        <div id="footer-spacer" class="mb-20"></div>
+        <div id="footer-spacer" class="mb-12"></div>
 
         <div id="footer" class="bg-black fg-white cyber-razor-top p-2 fixed-bottom">
         </div>

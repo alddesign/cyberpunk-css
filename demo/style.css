@@ -1,0 +1,31 @@
+/*
+Not required by cyberpunk-css! 
+Just for the purpose of this demo page.
+
+Custom css rules.
+*/
+@media screen and (max-width: 768px)
+{
+    #header
+    {
+        padding-left: 16px !important;
+        padding-bottom: 8px !important;
+    }
+
+    #header-css
+    {
+        padding-left: 24px !important;
+    }
+
+    #colors .col
+    {
+        padding: 8px !important;
+    }
+
+    .cyber-tile,
+    .cyber-tile-big,
+    .cyber-tile-small
+    {
+        margin-right: 0 !important;
+    }
+}
