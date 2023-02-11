@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="cyber-grid.css?v=1">
         <link rel="stylesheet" href="../cyberpunk.css?v=1">
         <link rel="stylesheet" href="style.css?v=1">
-
     </head>
 
     <body>
@@ -57,6 +56,7 @@
                         <li><a href="#section-source-code" class="cyber-a">Source Code</a></li>
                         <li><a href="#section-fonts" class="cyber-a">Fonts</a></li>
                         <li><a href="#section-headings" class="cyber-a">Headings</a></li>
+                        <li><a href="#section-tables" class="cyber-a">Tables</a></li>
                         <li><a href="#section-glitch-effects" class="cyber-a">Glitch effects</a></li>
                         <li><a href="#section-razors" class="cyber-a">Razors</a></li>
                         <li><a href="#section-banners" class="cyber-a">Banners</a></li>
@@ -101,8 +101,13 @@
                         Works also with other textfield-like input types such as password, number, date,...
                     </p>
                     <label for="input-text">Name:</label>
-                    <div class="cyber-input mb-4">
-                        <input id="input-text" name="input-text" type="text" value="" placeholder="some text..." />
+                    <div class="cyber-input mb-2">
+                        <input id="input-text" name="input-text" type="text" value="" placeholder="Enter name..." />
+                    </div>
+
+                    <label for="input-text2">Gender:</label>
+                    <div class="cyber-input mb-4 ac-purple fg-green">
+                        <input id="input-text2" name="input-text2" type="text" value="" placeholder="Whatever..." />
                     </div>
 
                     <h2 class="cyber-h">Select</h2>
@@ -241,6 +246,43 @@
                     <h6 class="cyber-h">Heading h6</h6>
                     <span class="cyber-h">A normal <code>&lt;span&gt;</code></span>
                     <!-- #endregion -->
+
+                    <!-- #region Tables -->
+                    <h1 id="section-tables" class="cyber-h">Tables</h1>
+                    <p>
+                        Add the <code>.cyber-table</code> class your <code>&lt;table&gt;</code> element. Use the <code>.ac-*</code> class for accent colors. 
+                    </p>
+                    <table class="cyber-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Module</th>
+                                <th>Enabled</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>mod_rewrite</td>
+                                <td><code>true</code></td>
+                                <td>Provides a rule-based rewriting engine to rewrite requested URLs on the fly</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>mod_cache</td>
+                                <td><code class="fg-red">false</code></td>
+                                <td>RFC 2616 compliant HTTP caching filter. Not to be confused with mod_cache_disk.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>mod_ssl</td>
+                                <td><code>true</code></td>
+                                <td>Strong cryptography using the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- #endregion-->
 
                     <!-- #region Glitch Effects -->
                     <h1 id="section-glitch-effects" class="cyber-h">Glitch effects</h1>

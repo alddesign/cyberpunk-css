@@ -49,6 +49,10 @@ codes[5] =
 codes[6] = 
 `<div class="cyber-input">*
     <input type="text" placeholder="some text..." />*
+</div>*
+*
+<div class="cyber-input ac-purple fg-green">*
+    <input type="text" placeholder="purple accent, green text..." />*
 </div>*`;
 
 codes[7] =
