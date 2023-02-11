@@ -1,5 +1,5 @@
 # cyberpunk-css
-A pure CSS library which provides Cyberpunk 2077 themed elements to your webpage.
+A pure CSS library providing Cyberpunk 2077 themed elements for your webpage.
 
 Demo & getting started: https://alddesign.github.io/cyberpunk-css/demo  
 
