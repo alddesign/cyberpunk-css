@@ -654,23 +654,6 @@ table.cyber-table
     border-collapse: collapse;
 }
 
-table.cyber-table::before,
-table.cyber-table::after
-{
-    content: ' ';
-    width: 100%;
-    height: 6px;
-    display: block;
-    background-color: var(--ac);
-    position: relative;
-    clip-path: polygon(60% 0, calc(60% + 6px) 100%, 100% 100%, 100% 0);
-}
-
-table.cyber-table::before
-{
-    clip-path: polygon(0 100%, 100% 100%, 100% 0, 80% 0, calc(80% - 6px) 100%, 30% 100%, calc(30% - 6px) 0, 6px 0);
-}
-
 table.cyber-table th,
 table.cyber-table td
 {
@@ -683,6 +666,51 @@ table.cyber-table thead th
     border-bottom-width: 2px ;
 }
 
+table.cyber-table::before,
+table.cyber-table::after
+{
+    content: ' ';
+    width: 100%;
+    display: block;
+    background-color: var(--ac);
+    position: relative;
+    height: 6px;
+}
+
+table.cyber-table::before,
+table.cyber-table.cyber-style-0::before
+{
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 80% 0, calc(80% - 6px) 100%, 30% 100%, calc(30% - 6px) 0, 6px 0);
+}
+
+table.cyber-table::after,
+table.cyber-table.cyber-style-0::after
+{
+    clip-path: polygon(60% 0, calc(60% + 6px) 100%, 100% 100%, 100% 0);
+}
+
+table.cyber-table.cyber-style-1::before
+{
+    clip-path: polygon(0 100%, 6px 0, 10% 0, 10% 100%, 80% 100%, 
+                       calc(80% + 6px) 0, 95% 0, 95% 100%, calc(95% + 6px) 100%, calc(95% + 6px) 0, calc(95% + 2 * 6px) 0, calc(95% + 2 * 6px) 100%,
+                       calc(95% + 3 * 6px) 100%, calc(95% + 3 * 6px) 0, 100%  0, 100% 100%);
+}
+
+table.cyber-table.cyber-style-1::after
+{
+    clip-path: polygon(100% 0, 100% 100%, calc(100% - 6px) 100%, calc(100% - 6px) 0,
+                       calc(100% - 2 * 6px) 0, calc(100% - 2 * 6px) 100%, 90% 100%, 90% 0, 75% 0, 75% 100%, 60% 100%, calc(60% - 6px) 0);
+}
+
+table.cyber-table.cyber-style-2::before
+{
+    clip-path: none;
+    position:absolute;
+    margin:-10px;
+    width:20px;
+    height:20px;
+    transform:rotate(45deg);
+}
 /*#endregion*/
 
 /*#region headings*/
