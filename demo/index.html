@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="cyber-grid.css?v=3">
         <link rel="stylesheet" href="../cyberpunk.css?v=3">
         <link rel="stylesheet" href="style.css?v=3">
+
+        <link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512">
     </head>
 
     <body>
@@ -259,8 +261,75 @@
                     <!-- #region Tables -->
                     <h1 id="section-tables" class="cyber-h">Tables</h1>
                     <p>
-                        Add the <code>.cyber-table</code> class your <code>&lt;table&gt;</code> element. Use the <code>.ac-*</code> class for accent colors. 
+                        Add the <code>.cyber-table</code> class your <code>&lt;table&gt;</code> element. Use the <code>.ac-*</code> class for accent colors.<br>
+                        There are different styles of tables controlled by the <code>.cyber-style-*</code> classes.
                     </p>
+                    
+                    <p><code>.cyber-table .ac-purple</code></p>
+                    <table class="cyber-table ac-purple">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Module</th>
+                                <th>Enabled</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>mod_rewrite</td>
+                                <td><code>true</code></td>
+                                <td>Provides a rule-based rewriting engine to rewrite requested URLs on the fly</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>mod_cache</td>
+                                <td><code class="fg-red">false</code></td>
+                                <td>RFC 2616 compliant HTTP caching filter. Not to be confused with mod_cache_disk.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>mod_ssl</td>
+                                <td><code>true</code></td>
+                                <td>Strong cryptography using the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><code>.cyber-table .cyber-style-1 .ac-cyan</code></p>
+                    <table class="cyber-table cyber-style-1 ac-cyan">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Module</th>
+                                <th>Enabled</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>mod_rewrite</td>
+                                <td><code>true</code></td>
+                                <td>Provides a rule-based rewriting engine to rewrite requested URLs on the fly</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>mod_cache</td>
+                                <td><code class="fg-red">false</code></td>
+                                <td>RFC 2616 compliant HTTP caching filter. Not to be confused with mod_cache_disk.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>mod_ssl</td>
+                                <td><code>true</code></td>
+                                <td>Strong cryptography using the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><code>.cyber-table .cyber-style-2</code></p>
                     <table class="cyber-table cyber-style-2">
                         <thead>
                             <tr>

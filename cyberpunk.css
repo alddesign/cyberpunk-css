@@ -1,4 +1,10 @@
-/* cyberpunk-css by alddesign: https://github.com/alddesign/cyberpunk-css */
+/* 
+ * cyberpunk-css by alddesign: https://github.com/alddesign/cyberpunk-css 
+ * v1.0.0-alpha.3
+ * 
+ * Free to use - do whatever the fck you want... 
+ */
+
 /*#region fonts*/
 @font-face 
 {
@@ -657,7 +663,7 @@ table.cyber-table
 table.cyber-table th,
 table.cyber-table td
 {
-    border: 1px solid var(--ac);
+    border: 1px solid;
     padding: .2rem .5rem;
 }
 
@@ -704,13 +710,18 @@ table.cyber-table.cyber-style-1::after
 
 table.cyber-table.cyber-style-2::before
 {
-    clip-path: none;
-    position:absolute;
-    margin:-10px;
-    width:20px;
-    height:20px;
-    transform:rotate(45deg);
+ 
+    clip-path: polygon(0 100%, 6px 0, calc(2 * 6px) 100%, calc(3 * 6px) 0, calc(4 * 6px + 10%) 0,calc(4 * 6px + 10%) 50%,
+                        35% 50%, 35% 100%, 70% 100%, 70% 50%, 80% 50%, 80% 100%);
 }
+
+table.cyber-table.cyber-style-2::after
+{
+ 
+    clip-path: polygon(0 0, 0 50%, 10% 50%, 10% 0, 30% 0, 30% 100%, 40% 100%, 40% 0,
+                        70% 0, 70% 50%, 80% 50%, 80% 100%, 90% 100%, calc(100% - 6px) 100%, 100% 0);
+}
+
 /*#endregion*/
 
 /*#region headings*/
