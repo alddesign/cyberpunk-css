@@ -131,6 +131,28 @@ body
     bottom: -.25em;
     left: -.15em;
 }
+
+.cyber-att
+{
+    color: var(--red);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 3px solid var(--red);
+    text-shadow: 0 0 4px var(--red);
+    padding: 6px;
+}
+
+.cyber-att-2
+{
+    background-color: var(--red);
+    color: var(--yellow);
+    text-shadow: 0 0 6px var(--yellow);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 3px solid var(--red);
+    padding: 6px;
+}
+
 /*#endregion*/
 
 /*#region colors*/
